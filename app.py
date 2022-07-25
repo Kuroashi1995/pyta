@@ -23,7 +23,7 @@ def inicio():
 @socketio.on('alarma')
 def alarm():
     print('estamos en evento alarma')
-    emit('panik', "AAAAAAAAA WIIIIIUUU PANIK")
+    emit('panik', "AAAAAAAAA WIIIIIUUU PANIK AAAAAAAAAAa")
 
 if __name__ == '__main__':
     socketio.run(app, debug=True)
