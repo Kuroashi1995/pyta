@@ -13,37 +13,9 @@
     <title>Prueba Socket</title>
   </head>
   <body>
-    <form action="" method="post">
-      <label for="name">Nombre: </label>
-      <input type="text" id="name" name="name" /><br />
-      <label for="email">Email: </label>
-      <input type="text" id="email" name="email" /><br />
-      <label for="password">Contraseña: </label>
-      <input type="password" id="password" name="password" /><br />
-      <input type="submit" id="send-signup" name="signup" value="Registrar" />
-    </form>
-    <button onclick="sendAlert()">Alerta</button>
-    <p id="estado">Todo tranki</p>
-    <br />
     <script>
       var socket = io();
-
-      function sendAlert() {
-        socket.emit("alarma");
-      }
-
-      socket.on("connect", function () {
-        console.log("Conectados madafaka!");
-      });
-
-      socket.on("panik", function (res) {
-        var element = document.getElementById("estado");
-        element.innerHTML = res;
-      });
-
-      socket.on("disconnect", function () {
-        console.log("Server desconectado");
-      });
     </script>
+    <!-- A partir de aqui metanle el body de la pagina -->
   </body>
 </html>

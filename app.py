@@ -9,21 +9,28 @@ socketio = SocketIO(app)
 
 @app.route('/', methods=['GET', 'POST'])
 def inicio():
-    if request.method == 'POST':
-        name = request.form['name']
-        email = request.form['email']
-        password = request.form['password']
-        next = request.args.get('next', None)
-        if next:
-            return redirect(next)
-        return redirect(url_for(''))
-    return render_template('index.html')
+    return render_template("index.html")
 
+@app.route('/paciente', methods=['GET', 'POST'])
+def formulario_pacientes():
+    return render_template("formulario_pacientes.html")
 
-@socketio.on('alarma')
-def alarm():
-    print('estamos en evento alarma')
-    emit('panik', "AAAAAAAAA WIIIIIUUU PANIK AAAAAAAAAAa")
+@app.route('/paramedicos/login', methods=['GET', 'POST'])
+def login_paramedicos():
+    return render_template("login_paramedicos.html")
 
-if __name__ == '__main__':
-    socketio.run(app, debug=True)
+@app.route('/paramedicos/formulario', methods=['GET', 'POST'])
+def formulario_paramedicos():
+    return render_template("formulario_paramedicos.html")
+
+@app.route('/paciente/enviado', methods=['GET', 'POST'])
+def enviado_pacientes():
+    return render_template("enviado_pacientes.html")
+
+@app.route('/paciente/pin', methods=['GET', 'POST'])
+def consultar_pin():
+    return render_template("consultar_pin.html")
+
+@app.route('/paramedicos/estado', methods=['GET', 'POST'])
+def paramedicos_estado():
+    return render_template("paramedicos_estado.html")
