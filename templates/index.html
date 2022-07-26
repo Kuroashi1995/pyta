@@ -1,56 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
-      integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
-      crossorigin="anonymous"
-    ></script>
-
-    <title>Pagina Principal</title>
-  </head>
-  <body>
+</head>
+<body>
+    
     <script>
-      var socket = io();
-    </script>
-    <!-- A partir de aqui metanle el body de la pagina -->
-    <div class="font-sans">
-      <div class="relative min-h-screen flex flex-col sm:justify-center items-center bg-gray-100 ">
-          <div class="relative sm:max-w-sm w-full">
-              <div class="card bg-blue-200 shadow-lg  w-full h-full rounded-3xl absolute  transform -rotate-6"></div>
-              <div class="card bg-red-400 shadow-lg  w-full h-full rounded-3xl absolute  transform rotate-6"></div>
-              <div class="relative w-full rounded-3xl  px-6 py-4 bg-gray-100 shadow-md">
-                  <br> </br>
-                  <img class="h-[100px] w-[100px] mx-auto mb-0"  src="https://cdn-icons-png.flaticon.com/512/1976/1976784.png" alt="google Logo" />
-
-                  <label class="block mt-0 text-2xl text-red-600 text-center font-semibold">
-                      PYTÃ
-                  </label>
-          
-                  <form method="#" action="#" class="mt-10">
-                              
-          
-                      <div class="mt-7">
-                          <button class="bg-red-400 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
-                              Paramèdicos
-                          </button>
-                          <br> </br>
-                          <button class="bg-blue-300 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
-                              Pacientes
-                          </button>
-                      </div>
-                      <br> </br>
-                      
-                      
-                  </form>
-              </div>
-          </div>
-      </div>
+        var socket = io();
+      </script>
+      <!-- A partir de aqui metanle el body de la pagina -->
+      <div class="font-sans">
+        <div class="flex flex-wrap min-h-screen sm:justify-center items-center h-full bg-gradient-to-tl from-blue-400 to-red-900 w-full py-16 px-4"> 
+            <!--agrego flex + flex-wrap y margin top 10 (mt-10) y saque back ground gris, bg- degradado-->
+            <div class="relative sm:max-w-sm w-full h-full">
+                <div class="flex-auto card bg-blue-200 shadow-lg  w-full h-full rounded-3xl absolute  transform -rotate-3"></div>
+                <div class="flex-auto card bg-red-400 shadow-lg  w-full h-full rounded-3xl absolute  transform rotate-3"></div>
+                <div class="relative w-full h-full rounded-3xl  px-10 py-20 bg-gray-100 shadow-md">
+                    <br> </br>
+                    <img class="h-[100px] w-[100px] mx-auto mb-0"  src="https://cdn-icons-png.flaticon.com/512/1976/1976784.png" alt="google Logo" />
+  
+                    <label class="block mt-0 text-2xl text-red-600 text-center font-semibold">
+                        PYTÃ
+                    </label>
+            
+                    <form method="#" action="#" class="mt-10">
+                                
+            
+                        <div class="mt-7">
+                            <button class="bg-red-400 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+                                Paramédicos
+                            </button>
+                            <br> </br>
+                            <button class="bg-blue-300 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+                                Pacientes
+                            </button>
+                        </div>
+                        <br> </br>
+                        
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </div>
       
-  </div>
-  </body>
+</body>
 </html>
