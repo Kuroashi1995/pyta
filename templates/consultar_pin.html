@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="30">
     <title>Consultar pin</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script
@@ -22,7 +23,7 @@
                 <div class="relative w-full rounded-3xl  px-6 py-4 bg-gray-100 shadow-md">
                     <br> </br>
                     <label for="" class="block mt-3 text-sm text-gray-800 text-center font-semibold text-lg">
-                        SU PIN EXPIRARÁ EN 6 HORAS
+                        SU PIN SE RENUEVA CADA 30 SEGUNDOS
                     </label>
                    
                     <form method="#" action="#" class="mt-10">
@@ -30,7 +31,9 @@
             
                         <div class="mt-7">
                             <button class="bg-red-400 w-full py-3 rounded-3xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
-                                PIN XXXX
+                                PIN : {{ pin }}
+
+
                             </button>
                           
                         </div>
@@ -43,6 +46,14 @@
         </div>
         
     </div>
+    <SCript>
+        var socket = io()
+
+        auth = funtion(){
+            socket.on('auth')
+            return true
+        }
+    </SCript>
 </body>
 </html>
     
