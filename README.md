@@ -39,15 +39,17 @@ python3 app.py
 
 -Andrew Alexander Halley Merlo
 
--Tamara Cantero
+-Tamara Romina Cantero Escobar
 
 -Santos Micael Lima Paredes
 
 -Pedro Manuel Rojas Valdez
 
--Gabriel Centurión Demetruk
+-Gabriel Enrique Centurión Demetruk
 
--Federico Bajac
+-Federico Sebastián Bajac Espinosa
+
+-Freddy Ramón Ramírez Brítez
 
 
 
