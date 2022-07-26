@@ -9,6 +9,50 @@ paramedicos_determinantes_grave = ['no puede respirar', 'convulsiones', 'unhas y
 paramedicos_grave = ['inconsciente', 'pulso rapido']
 paramedicos_intermedio = ['confusion','cefalea', 'sensibilidad a la luz', 'rigidez en el cuello', 'dolor en el hombro', 'saturacion menor a 95', 'fiebre alta', 'temperatura baja', 'dolor intenso','dolor moderado', 'hemorragia incontrolable', 'sangrado rectal', 'sangrado rectal', 'vomitos con sangre', 'golpe en la cabeza', 'golpe en el cuello', 'golpe en la espalda', 'fractura abierta']
 paramedicos_leve = ['fiebre', 'lesiones leves', 'infeccion', 'perdida aguda de audicion', 'entumecimiento']
+import sqlite3 as sql
+
+def createDB():                              # Creamos la Base de Datos
+    conn=sql.connect("AppDB.db")
+    conn.commit()
+    conn.close()
+
+
+def creatTableParamedicos():                           # Crear tabla para Paramedicos
+    conn = sql.connect("AppDB.db")
+    cursor = conn.cursor()
+    cursor.execute(                 # create table if not exists
+        """ CREATE TABLE IF NOT EXISTS paramedicos (
+            id integer primary key AUTOINCREMENT,
+            nombre text,
+            correo text,
+            contraseña text
+        )"""                            # --------comprobar si es que la matricula es realmente un número o si tiene también letras-------
+    )
+    conn.commit()
+    conn.close()
+
+
+def creatTableSolicitudes():                           # Crear tabla para Solicitudes
+    conn = sql.connect("AppDB.db")
+    cursor = conn.cursor()
+    cursor.execute(
+        """ CREATE TABLE IF NOT EXISTS solicitudes (
+            id_sol integer primary key AUTOINCREMENT,
+            estado text NOT NULL,
+            tipo text NOT NULL
+        )"""
+    )
+    conn.commit()
+    conn.close()
+
+
+def insertRowParamedicos(nombre, correo, contrasena):         # Insertar fila
+    conn = sql.connect("AppDB.db")
+    cursor = conn.cursor()
+    instruccion = f"INSERT INTO paramedicos(nombre, correo, contraseña) VALUES ('{nombre}', '{correo}', '{contrasena}')"
+    cursor.execute(instruccion)
+    conn.commit()
+    conn.close()
 
 def generar_pin():
     pin = int(random.randint(1000,10000))
@@ -30,6 +74,11 @@ def formulario_pacientes():
 
 @app.route('/paramedicos/login', methods=['GET', 'POST'])
 def login_paramedicos():
+    if request.method == 'POST':
+        nombre_medico = request.form['nombres']
+        email_medico = request.form['correos']
+        contrasena_medico = request.form['contrasena']
+        insertRowParamedicos(nombre_medico, email_medico, contrasena_medico)
     return render_template("login_paramedicos.html")
 
 @app.route('/paramedicos/formulario', methods=['GET', 'POST'])
@@ -91,3 +140,7 @@ def triage_paramedicos(datos):
 
 
 print(triage_paramedicos(control))
+if __name__ == "app":
+    createDB()
+    creatTableParamedicos()
+    creatTableSolicitudes()
