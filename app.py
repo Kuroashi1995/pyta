@@ -2,7 +2,50 @@ from flask import Flask, render_template, request, redirect, url_for
 from flask_socketio import SocketIO, emit
 import random
 import time
+import sqlite3 as sql
 
+def createDB():                              # Creamos la Base de Datos
+    conn=sql.connect("AppDB.db")
+    conn.commit()
+    conn.close()
+
+
+def creatTableParamedicos():                           # Crear tabla para Paramedicos
+    conn = sql.connect("AppDB.db")
+    cursor = conn.cursor()
+    cursor.execute(                 # create table if not exists
+        """ CREATE TABLE IF NOT EXISTS paramedicos (
+            id integer primary key AUTOINCREMENT,
+            nombre text,
+            correo text,
+            contraseña text
+        )"""                            # --------comprobar si es que la matricula es realmente un número o si tiene también letras-------
+    )
+    conn.commit()
+    conn.close()
+
+
+def creatTableSolicitudes():                           # Crear tabla para Solicitudes
+    conn = sql.connect("AppDB.db")
+    cursor = conn.cursor()
+    cursor.execute(
+        """ CREATE TABLE IF NOT EXISTS solicitudes (
+            id_sol integer primary key AUTOINCREMENT,
+            estado text NOT NULL,
+            tipo text NOT NULL
+        )"""
+    )
+    conn.commit()
+    conn.close()
+
+
+def insertRowParamedicos(nombre, correo, contrasena):         # Insertar fila
+    conn = sql.connect("AppDB.db")
+    cursor = conn.cursor()
+    instruccion = f"INSERT INTO paramedicos(nombre, correo, contraseña) VALUES ('{nombre}', '{correo}', '{contrasena}')"
+    cursor.execute(instruccion)
+    conn.commit()
+    conn.close()
 
 
 app = Flask(__name__)
@@ -19,6 +62,11 @@ def formulario_pacientes():
 
 @app.route('/paramedicos/login', methods=['GET', 'POST'])
 def login_paramedicos():
+    if request.method == 'POST':
+        nombre_medico = request.form['nombres']
+        email_medico = request.form['correos']
+        contrasena_medico = request.form['contrasena']
+        insertRowParamedicos(nombre_medico, email_medico, contrasena_medico)
     return render_template("login_paramedicos.html")
 
 @app.route('/paramedicos/formulario', methods=['GET', 'POST'])
@@ -42,3 +90,7 @@ def paramedicos_estado():
     return render_template("paramedicos_estado.html")
 
 
+if __name__ == "app":
+    createDB()
+    creatTableParamedicos()
+    creatTableSolicitudes()
