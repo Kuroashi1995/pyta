@@ -5,7 +5,6 @@ Aplicacion del grupo Dementores para la Hackaton Bootcamp X
 
 ## **Tecnologías:**
 - Flask
-- SQLAlchemy
 - SQLite3
 - TailwindCSS
 - Flask-SocketIO
