@@ -47,6 +47,27 @@ def insertRowParamedicos(nombre, correo, contrasena):         # Insertar fila
     conn.commit()
     conn.close()
 
+def verificarParmedico(correo, contrasena):
+    conn = sql.connect("AppDB.db")
+    cursor = conn.cursor()
+    instruccion = f"SELECT * FROM paramedicos WHERE correo LIKE '{correo}'"
+    cursor.execute(instruccion)
+    datos_correo=cursor.fetchall()         # Te trae una lista de listas
+    conn.commit()
+    instruccion = f"SELECT * FROM paramedicos WHERE contraseña LIKE '{contrasena}'"
+    cursor.execute(instruccion)
+    datos_contrasena=cursor.fetchall()         # Te trae una lista de listas
+    conn.commit()
+    conn.close()
+
+    if datos_correo != [] and datos_contrasena!=[]:
+        print(datos_correo[0][2])              # Indice 0 es el mejor resultado
+        print(datos_contrasena[0][3])
+        return 1
+    elif datos_correo == [] or datos_contrasena==[]:
+        print("Contraseña y/o Correo no coinciden")
+        return 0
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'hackaton'
@@ -60,14 +81,18 @@ def inicio():
 def formulario_pacientes():
     return render_template("formulario_pacientes.html")
 
+
+
 @app.route('/paramedicos/login', methods=['GET', 'POST'])
 def login_paramedicos():
     if request.method == 'POST':
-        nombre_medico = request.form['nombres']
         email_medico = request.form['correos']
         contrasena_medico = request.form['contrasena']
-        insertRowParamedicos(nombre_medico, email_medico, contrasena_medico)
+        valor = verificarParmedico(email_medico, contrasena_medico)
+        
     return render_template("login_paramedicos.html")
+
+
 
 @app.route('/paramedicos/formulario', methods=['GET', 'POST'])
 def formulario_paramedicos():
