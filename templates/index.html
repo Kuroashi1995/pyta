@@ -13,9 +13,6 @@
     <title>Pagina Principal</title>
   </head>
   <body>
-    <script>
-      var socket = io();
-    </script>
     <!-- A partir de aqui metanle el body de la pagina -->
     <div class="font-sans">
       <div class="relative min-h-screen flex flex-col sm:justify-center items-center bg-gray-100 ">
@@ -34,13 +31,13 @@
                               
           
                       <div class="mt-7">
-                          <button class="bg-red-400 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+                          <a class="bg-red-400 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105" href="{{ url_for('login_paramedicos') }}">
                               Paramèdicos
-                          </button>
+                          </a>
                           <br> </br>
-                          <button class="bg-blue-300 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+                          <a class="bg-blue-300 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105" href="{{ url_for('formulario_pacientes') }}">
                               Pacientes
-                          </button>
+                          </a>
                       </div>
                       <br> </br>
                       
