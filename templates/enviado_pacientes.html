@@ -28,7 +28,7 @@
                                     
                 
                             <div class="mt-7">
-                                <a href="{{ url_for('consultar_pin') }}">
+                                <a href="{{ url_for('consultar_pin') }}" onclick="pedir_pin()">
                                     Revisar Pin
                                 </a>
                               
@@ -43,6 +43,13 @@
             
         </div>
     </body>
+    <script>
+        socket = io()
+
+        function pedir_pin() {
+            socket.emit('pin solicitado')
+        }
+    </script>
     </html>
 </body>
 </html>

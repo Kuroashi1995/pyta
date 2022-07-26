@@ -1,9 +1,16 @@
+from multiprocessing import AuthenticationError
 from flask import Flask, render_template, request, redirect, url_for
 from flask_socketio import SocketIO, emit
 import random
 import time
 
+auth = False
 
+def generar_pin():
+    pin = int(random.randint(1000,10000))
+    return pin
+
+pin = generar_pin()
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'hackaton'
@@ -31,8 +38,7 @@ def enviado_pacientes():
 
 @app.route('/paciente/pin', methods=['GET', 'POST'])
 def consultar_pin():
-    ci=5046588
-    pin = int(random.random()*10000)
+    print(pin)
     if False:
         return redirect(url_for(inicio))
     return render_template("consultar_pin.html",pin = pin)
@@ -41,4 +47,12 @@ def consultar_pin():
 def paramedicos_estado():
     return render_template("paramedicos_estado.html")
 
-
+@socketio.on('pin solicitado')
+def refrescar_pin():
+    print("estamos en evento pin solicitado")
+    while True:
+        global pin
+        pin = generar_pin()
+        socketio.emit('new pin', pin)
+        print(pin)
+        time.sleep(30)
