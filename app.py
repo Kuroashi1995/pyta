@@ -90,7 +90,7 @@ def login_paramedicos():
         contrasena_medico = request.form['contrasena']
         valor = verificarParmedico(email_medico, contrasena_medico)
         
-    return render_template("login_paramedicos.html", valor=valor)
+    return render_template("login_paramedicos.html")
 
 
 
