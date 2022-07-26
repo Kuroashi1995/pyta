@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_socketio import SocketIO, emit
+import random
+import time
 
 
 
@@ -29,7 +31,11 @@ def enviado_pacientes():
 
 @app.route('/paciente/pin', methods=['GET', 'POST'])
 def consultar_pin():
-    return render_template("consultar_pin.html")
+    ci=5046588
+    pin = int(random.random()*10000)
+    if False:
+        return redirect(url_for(inicio))
+    return render_template("consultar_pin.html",pin = pin)
 
 @app.route('/paramedicos/estado', methods=['GET', 'POST'])
 def paramedicos_estado():
