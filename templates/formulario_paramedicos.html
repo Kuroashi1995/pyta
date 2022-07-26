@@ -28,9 +28,10 @@
             >
               Registrate
             </label>
-            <form method="#" action="#" class="mt-10">
+            <form method="POST" action="http://127.0.0.1:5000/paramedicos/login" class="mt-10">
               <div>
                 <input
+                  name="nombres"
                   type="text"
                   placeholder="Nombres"
                   class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0"
@@ -39,6 +40,7 @@
 
               <div class="mt-7">
                 <input
+                  name="correos"
                   type="email"
                   placeholder="Correo electronico"
                   class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0"
@@ -47,6 +49,7 @@
 
               <div class="mt-7">
                 <input
+                  name="contrasena"
                   type="password"
                   placeholder="Contraseña"
                   class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0"
@@ -60,6 +63,8 @@
                   class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0"
                 />
               </div>
+
+              <input type="submit" value="Enviar">
             </form>
           </div>
         </div>
