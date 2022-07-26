@@ -87,7 +87,7 @@ def formulario_paramedicos():
 
 @app.route('/paciente/enviado', methods=['GET', 'POST'])
 def enviado_pacientes():
-    return render_template("enviado_pacientes.html")
+    return render_template("form_enviado_pacientes.html")
 
 @app.route('/paciente/pin', methods=['GET', 'POST'])
 def consultar_pin():
