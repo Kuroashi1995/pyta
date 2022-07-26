@@ -1,9 +1,10 @@
-# PYTÃ
+# Documentación preliminar de PYTÃ
 
-Aplicacion del grupo Dementores para la Hackaton Bootcamp X
+## **Descripción de PYTÃ**
 
+PYTÃ es una aplicación web que pretende dar rápido ingreso a las personas al sistema de emergencias a través del registro en línea. El sistema provee una clasificación preliminar a través de un Triage, que evalúa el nivel de urgencia.
 
-## **Tecnologías:**
+## **Tecnologías utilizadas para el desarrollo del proyecto:**
 - Flask
 - SQLite3
 - TailwindCSS
@@ -29,7 +30,25 @@ source ./venv/bin/activate
 ```
 pip install -r requirements.txt
 ```
-### Por úiltimo ejecutamos el programa
+### Por último ejecutamos el programa
 ```
 python3 app.py
 ```
+
+## **Autores:**
+
+-Andrew Alexander Halley Merlo
+
+-Tamara Cantero
+
+-Santos Micael Lima Paredes
+
+-Pedro Manuel Rojas Valdez
+
+-Gabriel Centurión Demetruk
+
+-Federico Bajac
+
+
+
+**Coaches de Desarrollo:** Alexandra Cáceres, Claudia Melgarejo, Fernando Mellone, Sergio García
