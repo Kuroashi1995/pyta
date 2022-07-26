@@ -45,9 +45,9 @@ python3 app.py
 
 -Pedro Manuel Rojas Valdez
 
--Gabriel Centurión Demetruk
+-Gabriel Enrique Centurión Demetruk
 
--Federico Bajac
+-Federico Sebastián Bajac Espinosa
 
 
 
