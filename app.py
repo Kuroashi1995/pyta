@@ -34,3 +34,5 @@ def consultar_pin():
 @app.route('/paramedicos/estado', methods=['GET', 'POST'])
 def paramedicos_estado():
     return render_template("paramedicos_estado.html")
+
+
