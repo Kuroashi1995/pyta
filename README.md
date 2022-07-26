@@ -1,6 +1,6 @@
 # pyta
 
-#Aplicacion del grupo Dementores para la Hackaton Bootcamp X
+# Aplicacion del grupo Dementores para la Hackaton Bootcamp X
 
 
 ## **Tecnologías:**
