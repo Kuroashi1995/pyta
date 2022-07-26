@@ -2,7 +2,7 @@
 
 ## **Descripción de PYTÃ**
 
-PYTÃ es una aplicación web que pretende dar rápido ingreso a las personas al sistema de emergencias a través del registro en línea. El sistema provee una clasificación preliminar a través de un Triage, que evalúa el nivel de urgencia.
+PYTÃ es una aplicación web que pretende dar rápido ingreso a las personas al sistema de emergencias a través del registro en línea. El sistema provee una clasificación preliminar a través de un Triage, que evalúa el nivel de urgencia. Esta aplicación permitirá solucionar la problematicá actual que tienen las personas con relación al tiempo de espera para ser atendidas en los hospitales regionales.  
 
 ## **Tecnologías utilizadas para el desarrollo del proyecto:**
 - Flask
@@ -10,7 +10,7 @@ PYTÃ es una aplicación web que pretende dar rápido ingreso a las personas al 
 - TailwindCSS
 - Flask-SocketIO
 
-## Intrucciones
+## Instrucciones
 
 ### Para correr la aplicación primero debemos crear nuestro entorno virtual:
 
