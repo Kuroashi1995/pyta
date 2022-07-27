@@ -117,6 +117,7 @@ def login_paramedicos():
 def formulario_paramedicos():
     return render_template("formulario_paramedicos.html")
 
+
 @app.route('/paciente/enviado', methods=['GET', 'POST'])
 def enviado_pacientes():
     return render_template("form_enviado_pacientes.html")
@@ -131,6 +132,10 @@ def consultar_pin():
 @app.route('/paramedicos/estado', methods=['GET', 'POST'])
 def paramedicos_estado():
     return render_template("paramedicos_estado.html")
+
+@app.route('/paramedicos/confirmado', methods=['GET', 'POST'])
+def formulario_estado_confirmado():
+    return render_template("paramedicos_estado_confirmado.html")
 
 @socketio.on('pin solicitado')
 def refrescar_pin():
