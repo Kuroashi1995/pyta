@@ -1,0 +1,75 @@
+1 respiracion
+	sin problemas
+	chillidos al respirar
+	dificultad al respirar
+2 piel
+	sin problemas
+	coloracion morada en unhas y labios
+3 fiebre
+	sin problemas
+	fiebre
+	fiebre alta
+4 neurologicos
+	sin problemas
+	convulsiones
+5 conciencia
+	sin problemas
+	inconsciente
+	confundido
+6 dolor
+	sin problemas
+	dolor medio
+	dolor intenso
+7 lugar_dolor
+	en la cabeza
+	en el cuello y tronco
+	en el hombro
+	en el pecho
+	en el abdomen
+	en los genitales
+8 vomito_diarrea
+	sin problemas
+	si
+9 pulso
+	sin problemas
+	pulso acelerado
+	pulso lento
+10 sangrado
+	sin problemas
+	poco sangrado
+	mucho sangrado
+11 lugar_sangrado
+	texto
+12 alergias
+	alergia a la insulina
+	alergia a las sulfaminas
+	alergia a los anticonvulsivos 
+	alergia al yodo
+	alergia a la penicilina
+	alergia a la amoxicilina
+	alergia a la morfina
+13 otras_alergias
+	texto
+14 cronicas
+	tiene epoc
+	es fumador(/a)
+	es asmatico(/a)
+	es cardiaco(/a)
+	es obeso(/a)
+15 alimento
+	texto
+16 evento
+	accidentado(/a)
+	intoxicado(/a)
+	envenenado(/a)
+	con evento subito
+	en labor de parto
+	con problemas digestivos
+	con problemas genitologicos o urinarios
+	con problemas oculares
+17 tipo_sangre
+	texto
+18 comentarios
+	texto
+	
+	
