@@ -10,13 +10,13 @@ paramedicos_intermedio = ['confusion','cefalea', 'sensibilidad a la luz', 'rigid
 paramedicos_leve = ['fiebre', 'lesiones leves', 'infeccion', 'perdida aguda de audicion', 'entumecimiento']
 
 import sqlite3 as sql
-
+### Crea la base de datos-------------------------------
 def createDB():                              # Creamos la Base de Datos
     conn=sql.connect("AppDB.db")
     conn.commit()
     conn.close()
 
-
+### Crea tabla PARAMEDICOS------------------------------
 def creatTableParamedicos():                  # Crear tabla para Paramedicos
     conn = sql.connect("AppDB.db")
     cursor = conn.cursor()
@@ -31,7 +31,7 @@ def creatTableParamedicos():                  # Crear tabla para Paramedicos
     conn.commit()
     conn.close()
 
-
+### Busca el pin en la lista----------------------------
 def BuscarPin(pin):
     conn = sql.connect("AppDB.db")
     cursor = conn.cursor()
@@ -42,7 +42,7 @@ def BuscarPin(pin):
     conn.close()  
     return paciente
 
-
+### Crea la tabla de FORMULARIOS DE PARAMEDICOS---------
 def creatTableFormularioParamedicos():                           # Crear tabla para Solicitudes
     conn = sql.connect("AppDB.db")
     cursor = conn.cursor()
@@ -75,6 +75,7 @@ def creatTableFormularioParamedicos():                           # Crear tabla p
     conn.commit()
     conn.close()
 
+### Crea la tabla de FORMULARIOS DE PACIENTES-----------
 def creatTableFormularioPacientes():                           # Crear tabla para Solicitudes
     conn = sql.connect("AppDB.db")
     cursor = conn.cursor()
@@ -108,6 +109,7 @@ def creatTableFormularioPacientes():                           # Crear tabla par
     conn.commit()
     conn.close()
 
+
 def insertRowParamedicos(nombre, correo, contrasena):         # Insertar fila
     conn = sql.connect("AppDB.db")
     cursor = conn.cursor()
@@ -116,6 +118,8 @@ def insertRowParamedicos(nombre, correo, contrasena):         # Insertar fila
     conn.commit()
     conn.close()
 
+
+
 def insertRowFormParamedicos(respiracion, saturacion, piel, traumatismos, temperatura, neurologicos, conciencia, dolor, lugar_dolor, vomito_diarrea, pulso, sangrado, lugar_sangrado, alergias, otras_alergias, cronicas, otras_cronicas, alimento, evento, tipo_sangre, comentarios):         # Insertar fila
     conn = sql.connect("AppDB.db")
     cursor = conn.cursor()
@@ -123,6 +127,8 @@ def insertRowFormParamedicos(respiracion, saturacion, piel, traumatismos, temper
     cursor.execute(instruccion)
     conn.commit()
     conn.close()
+
+
 def insertRowFormPacientes(nombre_completo, cedula, respiracion, piel, fiebre, neurologicos, conciencia, dolor, lugar_dolor, vomito_diarrea, pulso, sangrado, lugar_sangrado, alergias, otras_alergias, cronicas, otras_cronicas, alimento, evento, tipo_sangre, comentarios):         # Insertar fila
     conn = sql.connect("AppDB.db")
     cursor = conn.cursor()
@@ -282,12 +288,17 @@ def formulario_estado_confirmado():
 def recepcion_confirmado():
     return render_template("confirmacion_de_solicitud.html")
 
+########################################################################################
 @app.route('/recepcion/lista', methods=['GET', 'POST'])
 def recepcion_lista():
+    if request.method == 'POST':
+        pass
+
     return render_template("lista_de_solicitudes.html")
+########################################################################################
 
 @socketio.on('pin solicitado')
-def refrescar_pin():
+def refrescar_pin(pin_viejo=None):
     print("estamos en evento pin solicitado")
     while True:
         global pin
