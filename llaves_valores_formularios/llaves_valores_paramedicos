@@ -1,0 +1,78 @@
+1 respiracion
+	sin problemas
+	vias respiratorias obstruidas
+	dificultad para respirar
+2 saturacion
+	texto
+3 piel
+	coloracion morada en unhas o labios
+	infecciones
+	erupciones en la piel
+4 traumatismos
+	texto
+5 fiebre
+	texto
+6 neurologicos
+	convulsiones
+	sensibilidad a la luz
+	rigidez en el cuello
+	perdida de la audicion
+	entumecimiento
+7 conciencia
+	sin problemas
+	inconciente
+	confundido
+8 dolor
+	sin problemas
+	dolor moderado
+	dolor intenso
+9 lugar_dolor
+	texto
+10 vomito_diarrea
+	sin problemas
+	vomito o diarrea
+	vomito o diarrea con sangre
+11 pulso
+	texto
+12 sangrado
+	sin problemas
+	hemorragia desangrante
+	sangrado abundante
+	sangrado controlado
+13 lugar_sangrado
+	texto
+14 alergias
+	alergia a la insulina
+	alergia a las sulfaminas
+	alergia a los anticonvulsivos 
+	alergia al yodo
+	alergia a la penicilina
+	alergia a la amoxicilina
+	alergia a la morfina
+15 otras_alergias
+	texto
+16 cronicas
+	tiene epoc
+	es fumador(/a)
+	es asmatico(/a)
+	es cardiaco(/a)
+	es obeso(/a)
+	VIH positivo(/a)
+	epileptico(/a)
+17 otras_cronicas
+	texto
+18 alimento
+	texto
+19 evento
+	accidentado(/a)
+	intoxicado(/a)
+	envenenado(/a)
+	con evento subito
+	en labor de parto
+	con problemas digestivos
+	con problemas genitologicos o urinarios
+	con problemas oculares
+20 tipo_sangre
+	texto
+18 comentarios
+	texto
