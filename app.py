@@ -32,11 +32,11 @@ def creatTableParamedicos():                  # Crear tabla para Paramedicos
     conn.close()
 
 
-def creatTableSolicitudes():                           # Crear tabla para Solicitudes
+def creatTableFormularioParamedicos():                           # Crear tabla para Solicitudes
     conn = sql.connect("AppDB.db")
     cursor = conn.cursor()
     cursor.execute(
-        """ CREATE TABLE IF NOT EXISTS solicitudes (
+        """ CREATE TABLE IF NOT EXISTS solicitudesParamedicos (
             id_sol integer primary key AUTOINCREMENT,
             estado text NOT NULL,
             tipo text NOT NULL
@@ -45,11 +45,50 @@ def creatTableSolicitudes():                           # Crear tabla para Solici
     conn.commit()
     conn.close()
 
+def creatTableFormularioPacientes():                           # Crear tabla para Solicitudes
+    conn = sql.connect("AppDB.db")
+    cursor = conn.cursor()
+    cursor.execute(
+        """ CREATE TABLE IF NOT EXISTS solicitudesPacientes (
+            id_form_paci integer primary key AUTOINCREMENT,
+            nombre_completo text,
+            cedula text,
+            respiracion text,
+            piel text,
+            fiebre text,
+            neurologicos text,
+            conciencia text,
+            dolor text,
+            lugar_dolor text,
+            vomito_diarrea text,
+            pulso text,
+            sangrado text,
+            lugar_sangrado text,
+            alergias text,
+            otras_alergias text,
+            cronicas text,
+            otras_cronicas text,
+            alimento text,
+            evento text,
+            tipo_sangre text,
+            comentarios text
+        )"""
+    )
+    conn.commit()
+    conn.close()
 
 def insertRowParamedicos(nombre, correo, contrasena):         # Insertar fila
     conn = sql.connect("AppDB.db")
     cursor = conn.cursor()
     instruccion = f"INSERT INTO paramedicos(nombre, correo, contraseña) VALUES ('{nombre}', '{correo}', '{contrasena}')"
+    cursor.execute(instruccion)
+    conn.commit()
+    conn.close()
+
+def insertRowFormPacientes(nombre_completo, cedula, respiracion, piel, fiebre, neurologicos, conciencia, dolor, lugar_dolor, vomito_diarrea, pulso, sangrado, lugar_sangrado, alergias, otras_alergias, cronicas, otras_cronicas, alimento, evento, tipo_sangre, comentarios):         # Insertar fila
+    conn = sql.connect("AppDB.db")
+    cursor = conn.cursor()
+    instruccion = f"INSERT INTO solicitudesPacientes(nombre_completo, cedula, respiracion, piel, fiebre, neurologicos, conciencia, dolor, lugar_dolor, vomito_diarrea, pulso, sangrado, lugar_sangrado, alergias, otras_alergias, cronicas, otras_cronicas, alimento, evento, tipo_sangre, comentarios) VALUES ('{nombre_completo}', '{cedula}', '{respiracion}', '{piel}', '{fiebre}', '{neurologicos}', '{conciencia}', '{dolor}', '{lugar_dolor}', '{vomito_diarrea}', '{pulso}', '{sangrado}', '{lugar_sangrado}', '{alergias}', '{otras_alergias}', '{cronicas}', '{otras_cronicas}', '{alimento}', '{evento}', '{tipo_sangre}', '{comentarios}')"
     cursor.execute(instruccion)
     conn.commit()
     conn.close()
@@ -105,10 +144,6 @@ def login_paramedicos():
             return redirect('/paramedicos/formulario')
         elif valor == 0:
             return redirect("/paramedicos/login?error=1")
-            # print(error1)
-            # return redirect('/paramedicos/login')
-    # return render_template("login_paramedicos.html", error1=error1)
-            # pass
     return render_template("login_paramedicos.html")
 
 
@@ -117,13 +152,43 @@ def login_paramedicos():
 def formulario_paramedicos():
     return render_template("formulario_paramedicos.html")
 
-
+###################################################################
 @app.route('/paciente/enviado', methods=['GET', 'POST'])
 def enviado_pacientes():
     if request.method == 'POST':
+        nombre_completo = request.form['nombre_completo']
+        cedula = request.form['cedula']
         respiracion = request.form['respiracion']
-        print(respiracion)
+        piel = request.form['piel']
+        fiebre = request.form['fiebre']
+        neurologicos = request.form['neurologicos']
+        conciencia = request.form['conciencia']
+        dolor = request.form['dolor']
+        lugar_dolor=[]
+        if "lugar_dolor" in request.form.keys():
+            lugar_dolor = request.form['lugar_dolor']
+        vomito_diarrea = request.form['vomito_diarrea']
+        pulso = request.form['pulso']
+        sangrado = request.form['sangrado']
+        lugar_sangrado = request.form['lugar_sangrado']
+        alergias = []
+        if "alergias" in request.form.keys():
+            alergias = request.form['alergias']
+        otras_alergias = request.form['otras_alergias']
+        cronicas = []
+        if "cronicas" in request.form.keys():
+            cronicas = request.form['cronicas']
+        otras_cronicas=request.form['otras_cronicas']
+        alimento = request.form['alimento']
+        evento = []
+        if "eventos" in request.form.keys():
+            evento = request.form['evento']
+        tipo_sangre = request.form['tipo_sangre']
+        comentarios = request.form['comentarios']
+        insertRowFormPacientes(nombre_completo, cedula, respiracion, piel, fiebre, neurologicos, conciencia, dolor, lugar_dolor, vomito_diarrea, pulso, sangrado, lugar_sangrado, alergias, otras_alergias, cronicas, otras_cronicas, alimento, evento, tipo_sangre, comentarios)
     return render_template("form_enviado_pacientes.html")
+###################################################################
+
 
 @app.route('/paciente/pin', methods=['GET', 'POST'])
 def consultar_pin():
@@ -183,4 +248,5 @@ print(triage_paramedicos(control))
 if __name__ == "app":
     createDB()
     creatTableParamedicos()
-    creatTableSolicitudes()
+    creatTableFormularioParamedicos()
+    creatTableFormularioPacientes()
