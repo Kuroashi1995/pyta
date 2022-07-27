@@ -44,6 +44,10 @@
             // window.location.reload();
             document.getElementById('pin').innerText = pin
         })
+
+        socket.on('verificar pin', function () {
+            window.location.href = '{{url_for("recepcion_confirmado")}}'
+        })
     </SCript>
 </body>
 </html>

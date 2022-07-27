@@ -252,34 +252,34 @@ def obtener_todas_las_solicitudes():
                 "descripcion": resultado["descripcion"]
             })
 
-            for s in resultados_paramedicos:
-                resultado = generar_descripcion(s[0], "FormParamedicos")
-                solicitudes.append({
-                    "id": s[0],
-                    "respiracion": s[1],
-                    "saturacion": s[2],
-                    "piel": s[3],
-                    "traumatismos": s[4],
-                    "temperatura": s[5],
-                    "neurologicos": s[6],
-                    "conciencia": s[7],
-                    "dolor": s[8],
-                    "lugar_dolor": from_string_to_list(s[9]),
-                    "vomito_diarrea": s[10],
-                    "pulso": s[11],
-                    "sangrado": s[12],
-                    "lugar_sangrado": s[13],
-                    "alergias": from_string_to_list(s[14]),
-                    "otras_alergias": s[15],
-                    "cronicas": from_string_to_list(s[16]),
-                    "otras_cronicas": s[17],
-                    "alimento": s[18],
-                    "evento": from_string_to_list(s[19]),
-                    "tipo_sangre": s[20],
-                    "comentarios": s[21],
-                    "triage": resultado["triage"],
-                    "descripcion": resultado["descripcion"]
-                })
+        for s in resultados_paramedicos:
+            resultado = generar_descripcion(s[0], "FormParamedicos")
+            solicitudes.append({
+                "id": s[0],
+                "respiracion": s[1],
+                "saturacion": s[2],
+                "piel": s[3],
+                "traumatismos": s[4],
+                "temperatura": s[5],
+                "neurologicos": s[6],
+                "conciencia": s[7],
+                "dolor": s[8],
+                "lugar_dolor": from_string_to_list(s[9]),
+                "vomito_diarrea": s[10],
+                "pulso": s[11],
+                "sangrado": s[12],
+                "lugar_sangrado": s[13],
+                "alergias": from_string_to_list(s[14]),
+                "otras_alergias": s[15],
+                "cronicas": from_string_to_list(s[16]),
+                "otras_cronicas": s[17],
+                "alimento": s[18],
+                "evento": from_string_to_list(s[19]),
+                "tipo_sangre": s[20],
+                "comentarios": s[21],
+                "triage": resultado["triage"],
+                "descripcion": resultado["descripcion"]
+            })
 
         return solicitudes
 
@@ -340,6 +340,7 @@ def verificar_pin():
     pin=request.args["pin"]
     # TO DO: Hacer update de verificacion del ROW con el PIN X
     cambiarVerificacion(pin)
+    socketio.emit('verificar pin')
     return redirect(url_for("recepcion_lista"))
 
 @app.route('/recepcion/login', methods=['GET', 'POST'])
@@ -395,6 +396,7 @@ def enviado_pacientes():
         comentarios = request.form['comentarios']
         id = insertRowFormPacientes(nombre_completo, cedula, respiracion, piel, fiebre, neurologicos, conciencia, dolor, lugar_dolor, vomito_diarrea, pulso, sangrado, lugar_sangrado, alergias, otras_alergias, cronicas, otras_cronicas, alimento, evento, tipo_sangre, comentarios)
         print(id)
+        socketio.emit('nueva solicitud')
     return render_template("form_enviado_pacientes.html", id=id)
 
 
@@ -448,6 +450,7 @@ def paramedicos_estado():
         tipo_sangre = request.form['tipo_sangre']
         comentarios = request.form['comentarios']
         insertRowFormParamedicos(respiracion, saturacion, piel, traumatismos, temperatura, neurologicos, conciencia, dolor, lugar_dolor, vomito_diarrea, pulso, sangrado, lugar_sangrado, alergias, otras_alergias, cronicas, otras_cronicas, alimento, evento, tipo_sangre, comentarios)
+        socketio.emit('nueva solicitud')
 
     return render_template("paramedicos_estado.html")
 

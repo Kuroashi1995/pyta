@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+      integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <!-- This example requires Tailwind CSS v2.0+ -->
@@ -108,5 +113,12 @@
         </div>
       </div>
     </div>
+    <script>
+      var socket = io();
+
+      socket.on("nueva solicitud", function () {
+        window.location.reload();
+      });
+    </script>
   </body>
 </html>
