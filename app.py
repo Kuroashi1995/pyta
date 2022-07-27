@@ -48,7 +48,7 @@ def creatTableFormularioParamedicos():                           # Crear tabla p
     cursor = conn.cursor()
     cursor.execute(
         """ CREATE TABLE IF NOT EXISTS FormParamedicos (
-            id_form_para integer primary key AUTOINCREMENT,
+            id integer primary key AUTOINCREMENT,
             respiracion text,
             saturacion text,
             piel text,
@@ -81,7 +81,7 @@ def creatTableFormularioPacientes():                           # Crear tabla par
     cursor = conn.cursor()
     cursor.execute(
         """ CREATE TABLE IF NOT EXISTS FormPacientes (
-            id_form_paci integer primary key AUTOINCREMENT,
+            id integer primary key AUTOINCREMENT,
             nombre_completo text,
             cedula text,
             respiracion text,
@@ -201,10 +201,95 @@ def triage_paramedicos(datos):
     else:
         return('verde')
 
-def generar_descripcion_pacientes(id):
+
+def obtener_todas_las_solicitudes():
     conn = sql.connect("AppDB.db")
     cursor = conn.cursor()
-    instruccion = f"SELECT * FROM FormPacientes WHERE id_form_paci LIKE '{id}'"
+
+    cursor.execute(f"SELECT * FROM FormPacientes WHERE verificado LIKE 0")
+    resultados_pacientes = cursor.fetchall() # Te trae una lista de listas
+
+    cursor.execute(f"SELECT * FROM FormParamedicos")
+    resultados_paramedicos = cursor.fetchall() # Te trae una lista de listas
+
+    conn.commit()
+    conn.close()
+
+    if len(resultados_pacientes) > 0:
+
+        solicitudes = []
+
+        def from_string_to_list(text):
+            return text.replace('[', '').replace(']', '').split(',')
+
+        for s in resultados_pacientes:
+            resultado = generar_descripcion(s[0], "FormPacientes")
+            solicitudes.append({
+                "id": s[0],
+                "nombre_completo": s[1],
+                "cedula": s[2],
+                "respiracion": s[3],
+                "piel": s[4],
+                "fiebre": s[5],
+                "neurologicos": s[6],
+                "conciencia": s[7],
+                "dolor": s[8],
+                "lugar_dolor": from_string_to_list(s[9]),
+                "vomito_diarrea": s[10],
+                "pulso": s[11],
+                "sangrado": s[12],
+                "lugar_sangrado": s[13],
+                "alergias": from_string_to_list(s[14]),
+                "otras_alergias": s[15],
+                "cronicas": from_string_to_list(s[16]),
+                "otras_cronicas": s[17],
+                "alimento": s[18],
+                "evento": from_string_to_list(s[19]),
+                "tipo_sangre": s[20],
+                "comentarios": s[21],
+                "pin": s[22],
+                "triage": resultado["triage"],
+                "descripcion": resultado["descripcion"]
+            })
+
+            for s in resultados_paramedicos:
+                resultado = generar_descripcion(s[0], "FormParamedicos")
+                solicitudes.append({
+                    "id": s[0],
+                    "respiracion": s[1],
+                    "saturacion": s[2],
+                    "piel": s[3],
+                    "traumatismos": s[4],
+                    "temperatura": s[5],
+                    "neurologicos": s[6],
+                    "conciencia": s[7],
+                    "dolor": s[8],
+                    "lugar_dolor": from_string_to_list(s[9]),
+                    "vomito_diarrea": s[10],
+                    "pulso": s[11],
+                    "sangrado": s[12],
+                    "lugar_sangrado": s[13],
+                    "alergias": from_string_to_list(s[14]),
+                    "otras_alergias": s[15],
+                    "cronicas": from_string_to_list(s[16]),
+                    "otras_cronicas": s[17],
+                    "alimento": s[18],
+                    "evento": from_string_to_list(s[19]),
+                    "tipo_sangre": s[20],
+                    "comentarios": s[21],
+                    "triage": resultado["triage"],
+                    "descripcion": resultado["descripcion"]
+                })
+
+        return solicitudes
+
+    return []
+
+
+def generar_descripcion(id, tabla):
+    conn = sql.connect("AppDB.db")
+    cursor = conn.cursor()
+    instruccion = f"SELECT * FROM '{tabla}' WHERE id LIKE '{id}'"
     cursor.execute(instruccion)
     lista=cursor.fetchall()[0]
     descripcion = 'LLegando paciente con: '
@@ -216,7 +301,10 @@ def generar_descripcion_pacientes(id):
                 descripcion += f'{elemento}, '
     
     print(descripcion)
-    print(triage_paramedicos(lista))
+    return {
+        "triage": triage_paramedicos(lista),
+        "descripcion" : descripcion
+    }
 
 
 app = Flask(__name__)
@@ -316,7 +404,7 @@ def consultar_pin(id):
     pin = generar_pin()
     conn = sql.connect("AppDB.db")
     cursor = conn.cursor()
-    instruccion = f"UPDATE FormPacientes SET pin = '{pin}' WHERE id_form_paci LIKE '{id}'"
+    instruccion = f"UPDATE FormPacientes SET pin = '{pin}' WHERE id LIKE '{id}'"
     cursor.execute(instruccion)
     conn.commit()
     conn.close()
@@ -374,12 +462,11 @@ def recepcion_confirmado():
     return render_template("confirmacion_de_solicitud.html")
 
 
-@app.route('/recepcion/lista', methods=['GET', 'POST'])
+@app.route('/recepcion/lista', methods=['GET'])
 def recepcion_lista():
-    if request.method == 'POST':
-        pass
+    solicitudes = obtener_todas_las_solicitudes()
 
-    return render_template("lista_de_solicitudes.html")
+    return render_template("lista_de_solicitudes.html", solicitudes=solicitudes)
 
 
 @socketio.on('pin solicitado')
@@ -390,7 +477,7 @@ def refrescar_pin(id):
         pin = generar_pin()
         conn = sql.connect("AppDB.db")
         cursor = conn.cursor()
-        instruccion = f"UPDATE FormPacientes SET pin = '{pin}' WHERE id_form_paci LIKE '{id}'"
+        instruccion = f"UPDATE FormPacientes SET pin = '{pin}' WHERE id LIKE '{id}'"
         cursor.execute(instruccion)
         conn.commit()
         conn.close()

@@ -54,12 +54,6 @@
                   <tr>
                     <th
                       scope="col"
-                      class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
-                    >
-                      Pin
-                    </th>
-                    <th
-                      scope="col"
                       class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
                     >
                       Solicitante
@@ -83,32 +77,29 @@
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-200 bg-white">
+                  {% if solicitudes | length > 0 %} {% for solicitud in
+                  solicitudes %}
                   <tr>
                     <td
-                      class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-semibold text-gray-900"
+                      class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
                     >
-                      Nro del pin
+                      {{solicitud['nombre_completo']}}
+                    </td>
+                    <td
+                      class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 max-w-[50px] truncate"
+                    >
+                      {{solicitud['descripcion']}}
                     </td>
                     <td
                       class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
                     >
-                      Nombre del paramèdico/paciente
-                    </td>
-                    <td
-                      class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
-                    >
-                      Sintomas relevantes
-                    </td>
-                    <td
-                      class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
-                    >
-                      Còdigo
+                      {{solicitud['triage']}}
                     </td>
                     <td
                       class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6"
                     ></td>
                   </tr>
-
+                  {% endfor %} {% endif %}
                   <!-- More people... -->
                 </tbody>
               </table>
