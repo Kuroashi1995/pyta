@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulario Enviado</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script
@@ -11,61 +11,71 @@
       integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
       crossorigin="anonymous"
     ></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="font-sans">
-        <div
-          class="flex flex-wrap min-h-screen sm:justify-center items-center h-full bg-gradient-to-tl from-blue-400 to-red-900 w-full py-16 px-4"
-        >
-          <!--agrego flex + flex-wrapgit y saque back bground gris, agg bg- degradado-->
-          <div class="relative sm:max-w-sm w-full h-full">
-              <br />
+      <div
+        class="flex flex-wrap min-h-screen sm:justify-center items-center h-full bg-gradient-to-tl from-blue-400 to-red-900 w-full py-16 px-4"
+      >
+        <!--agrego flex + flex-wrapgit y saque back bground gris, agg bg- degradado-->
+        <div class="relative sm:max-w-sm w-full h-full">
+          <br />
           <div class="font-sans">
-                <div class="relative sm:max-w-sm w-full">
-                    <div class="card bg-blue-200 shadow-lg  w-full h-full rounded-3xl absolute  transform -rotate-6"></div>
-                    <div class="card bg-red-400 shadow-lg  w-full h-full rounded-3xl absolute  transform rotate-6"></div>
-                    <div class="relative w-full rounded-3xl  px-6 py-4 bg-gray-100 shadow-md">
-                        <br> </br>
-                        <img
-                        class="h-[100px] w-[100px] mx-auto mb-0"
-                        src="https://cdn-icons-png.flaticon.com/512/1976/1976784.png"
-                        alt="google Logo"
-                      />
-          
-                      <label
-                        class="block mt-0 text-3xl text-red-600 text-center font-bold"
-                      >
-                        PYTÃ
-                      </label>
-                        <label for="" class="block mt-3 text-sm text-gray-800 text-center font-semibold text-lg">
-                           <p class="text-center"> Formulario enviado </p>
-                        </label>
-                       
-                        <form method="#" action="#" class="mt-5 mb-7">
-                            <button class="bg-red-400 w-full py-3 rounded-3xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
-                            <div class="mt-1">
-                                <a href="{{ url_for('consultar_pin') }}" onclick="pedir_pin()">
-                                   <p class="text-center"> Revisar Pin </p>
-                                </button>    </a>
-                            
-                            </div>
-                            <br> </br>
-                            
-                            
-                        </form>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </body>
-    <script>
-        socket = io()
+            <div class="relative sm:max-w-sm w-full">
+              <div
+                class="card bg-blue-200 shadow-lg w-full h-full rounded-3xl absolute transform -rotate-6"
+              ></div>
+              <div
+                class="card bg-red-400 shadow-lg w-full h-full rounded-3xl absolute transform rotate-6"
+              ></div>
+              <div
+                class="relative w-full rounded-3xl px-6 py-4 bg-gray-100 shadow-md"
+              >
+                <br />
+                <img
+                  class="h-[100px] w-[100px] mx-auto mb-0"
+                  src="https://cdn-icons-png.flaticon.com/512/1976/1976784.png"
+                  alt="google Logo"
+                />
 
-        function pedir_pin() {
-            socket.emit('pin solicitado')
-        }
+                <h1
+                  class="block mt-0 text-3xl text-red-600 text-center font-bold"
+                >
+                  PYTÃ
+                </h1>
+                <h2
+                  for=""
+                  class="block mt-3 text-sm text-gray-800 text-center font-semibold text-lg"
+                >
+                  <p class="text-center">Formulario enviado</p>
+                </h2>
+
+                <div class="mt-5 mb-7 w-full">
+                  <div class="mt-1 w-full">
+                    <a
+                      class="text-center bg-red-400 w-full block py-3 rounded-3xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105"
+                      href="{{ url_for('consultar_pin', id=id) }}"
+                      onclick="pedir_pin()"
+                    >
+                      Revisar Pin
+                    </a>
+                  </div>
+                  <br />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      socket = io();
+
+      var id = Number("{{ id }}");
+
+      function pedir_pin() {
+        socket.emit("pin solicitado", id);
+      }
     </script>
-    </html>
-</body>
+  </body>
 </html>

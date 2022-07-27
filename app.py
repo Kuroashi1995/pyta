@@ -134,8 +134,11 @@ def insertRowFormPacientes(nombre_completo, cedula, respiracion, piel, fiebre, n
     cursor = conn.cursor()
     instruccion = f"INSERT INTO FormPacientes(nombre_completo, cedula, respiracion, piel, fiebre, neurologicos, conciencia, dolor, lugar_dolor, vomito_diarrea, pulso, sangrado, lugar_sangrado, alergias, otras_alergias, cronicas, otras_cronicas, alimento, evento, tipo_sangre, comentarios) VALUES ('{nombre_completo}', '{cedula}', '{respiracion}', '{piel}', '{fiebre}', '{neurologicos}', '{conciencia}', '{dolor}', '{lugar_dolor}', '{vomito_diarrea}', '{pulso}', '{sangrado}', '{lugar_sangrado}', '{alergias}', '{otras_alergias}', '{cronicas}', '{otras_cronicas}', '{alimento}', '{evento}', '{tipo_sangre}', '{comentarios}')"
     cursor.execute(instruccion)
+    id = cursor.lastrowid
+    print(id)
     conn.commit()
     conn.close()
+    return id
 
 def verificarParmedico(correo, contrasena):
     conn = sql.connect("AppDB.db")
@@ -228,17 +231,22 @@ def enviado_pacientes():
             evento = request.form['evento']
         tipo_sangre = request.form['tipo_sangre']
         comentarios = request.form['comentarios']
-        insertRowFormPacientes(nombre_completo, cedula, respiracion, piel, fiebre, neurologicos, conciencia, dolor, lugar_dolor, vomito_diarrea, pulso, sangrado, lugar_sangrado, alergias, otras_alergias, cronicas, otras_cronicas, alimento, evento, tipo_sangre, comentarios)
-    return render_template("form_enviado_pacientes.html")
+        id = insertRowFormPacientes(nombre_completo, cedula, respiracion, piel, fiebre, neurologicos, conciencia, dolor, lugar_dolor, vomito_diarrea, pulso, sangrado, lugar_sangrado, alergias, otras_alergias, cronicas, otras_cronicas, alimento, evento, tipo_sangre, comentarios)
+        print(id)
+    return render_template("form_enviado_pacientes.html", id=id)
 
 
 
-@app.route('/paciente/pin', methods=['GET', 'POST'])
-def consultar_pin():
-    print(pin)
-    if False:
-        return redirect(url_for(inicio))
-    return render_template("consultar_pin.html",pin = pin)
+@app.route('/paciente/pin/<id>', methods=['GET', 'POST'])
+def consultar_pin(id):
+    pin = generar_pin()
+    conn = sql.connect("AppDB.db")
+    cursor = conn.cursor()
+    instruccion = f"UPDATE FormPacientes SET pin = '{pin}' WHERE id_form_paci LIKE '{id}'"
+    cursor.execute(instruccion)
+    conn.commit()
+    conn.close()
+    return render_template("consultar_pin.html", pin=pin)
 
 @app.route('/paramedicos/estado', methods=['GET', 'POST'])
 def paramedicos_estado():
@@ -298,14 +306,19 @@ def recepcion_lista():
 ########################################################################################
 
 @socketio.on('pin solicitado')
-def refrescar_pin(pin_viejo=None):
+def refrescar_pin(id):
     print("estamos en evento pin solicitado")
     while True:
-        global pin
+        time.sleep(30)
         pin = generar_pin()
+        conn = sql.connect("AppDB.db")
+        cursor = conn.cursor()
+        instruccion = f"UPDATE FormPacientes SET pin = '{pin}' WHERE id_form_paci LIKE '{id}'"
+        cursor.execute(instruccion)
+        conn.commit()
+        conn.close()
         socketio.emit('new pin', pin)
         print(pin)
-        time.sleep(30)
 
 control = ['no puede respirar', 'inconsciente', 'pulso rapido', 'cefalea']
 
