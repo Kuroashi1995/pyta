@@ -1,10 +1,10 @@
-from multiprocessing import AuthenticationError
 from flask import Flask, render_template, request, redirect, url_for
 from flask_socketio import SocketIO, emit
 import random
 import time
 
 auth = False
+error1=""
 paramedicos_determinantes_grave = ['no puede respirar', 'convulsiones', 'unhas y labios morados', 'hemorragia desangrante']
 paramedicos_grave = ['inconsciente', 'pulso rapido']
 paramedicos_intermedio = ['confusion','cefalea', 'sensibilidad a la luz', 'rigidez en el cuello', 'dolor en el hombro', 'saturacion menor a 95', 'fiebre alta', 'temperatura baja', 'dolor intenso','dolor moderado', 'hemorragia incontrolable', 'sangrado rectal', 'sangrado rectal', 'vomitos con sangre', 'golpe en la cabeza', 'golpe en el cuello', 'golpe en la espalda', 'fractura abierta']
@@ -18,7 +18,7 @@ def createDB():                              # Creamos la Base de Datos
     conn.close()
 
 
-def creatTableParamedicos():                           # Crear tabla para Paramedicos
+def creatTableParamedicos():                  # Crear tabla para Paramedicos
     conn = sql.connect("AppDB.db")
     cursor = conn.cursor()
     cursor.execute(                 # create table if not exists
@@ -98,12 +98,20 @@ def formulario_pacientes():
 
 @app.route('/paramedicos/login', methods=['GET', 'POST'])
 def login_paramedicos():
+    global error1
     if request.method == 'POST':
         email_medico = request.form['correos']
         contrasena_medico = request.form['contrasena']
         valor = verificarParmedico(email_medico, contrasena_medico)
-        
-    return render_template("login_paramedicos.html")
+        if valor==1:
+            return redirect('/paramedicos/formulario')
+        elif valor == 0:
+            error1="Contraseña y/o Correo no coinciden"
+            # print(error1)
+            # return redirect('/paramedicos/login')
+    # return render_template("login_paramedicos.html", error1=error1)
+            pass
+    return render_template("login_paramedicos.html", error1=error1)
 
 
 
