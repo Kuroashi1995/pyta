@@ -11,6 +11,14 @@
       integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
       crossorigin="anonymous"
     ></script>
+    <script>
+      var socket = io()
+
+      socket.on('confirmar solicitud',function (){
+        // window.location.reload() ;
+        window.location.href = 'https://127.0.0.1:5000/paramedicos/confirmado'; // La URL de destino.
+      }) 
+    </script>
   </head>
   <body>
     <div class="font-sans">
@@ -44,5 +52,5 @@
       
   </div>
 </body>
-  </body>
+
 </html>
