@@ -4,7 +4,7 @@
 	dificultad al respirar
 2 piel
 	sin problemas
-	coloracion morada en unhas y labios
+	coloracion morada en unhas o labios
 3 fiebre
 	sin problemas
 	fiebre
@@ -14,7 +14,7 @@
 	convulsiones
 5 conciencia
 	sin problemas
-	inconsciente
+	inconciente
 	confundido
 6 dolor
 	sin problemas
@@ -29,7 +29,7 @@
 	en los genitales
 8 vomito_diarrea
 	sin problemas
-	si
+	vomito o diarrea
 9 pulso
 	sin problemas
 	pulso acelerado
