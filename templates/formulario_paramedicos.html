@@ -326,7 +326,7 @@
               <div class="flex items-center mb-4">
                 <input
                   id="No"
-                  name="vomitos_diarrea"
+                  name="vomito_diarrea"
                   checked
                   type="radio"
                   value=""
@@ -341,9 +341,9 @@
               <div class="flex items-center mb-4">
                 <input
                   id="Sí"
-                  name="vomitos_diarrea"
+                  name="vomito_diarrea"
                   type="radio"
-                  value="vomitos o diarrea"
+                  value="vomito o diarrea"
                   class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
                 <label
@@ -863,11 +863,11 @@
                   <div>
                     <label
                       for="message"
-                      name="comentarios"
                       class="block mb-4 text-sm font-medium text-gray-500 dark:text-gray-400"
                       >Informaciones adicionales</label
-                    >
-                    <textarea
+                      >
+                      <textarea
+                      name="comentarios"
                       id="message"
                       rows="4"
                       class="block p-2.5 w-full text-sm text-gray-500 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -876,14 +876,14 @@
                     <button
                       class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-20 border border-blue-700 rounded"
                     >
-                      Enviar Formulario
+                      <input type="submit" value="Enviar formulario">
                     </button>
                   </div>
                   <a href="{{ url_for('paramedicos_estado') }}"></a>
                 </div>
               </div>
             </div>
-          </div>
+          <form>
         </div>
       </div>
     </div>
