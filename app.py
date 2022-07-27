@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, abort
 from flask_socketio import SocketIO, emit
 import random
 import time
@@ -145,6 +145,127 @@ def generar_pin():
     pin = int(random.randint(1000,10000))
     return pin
 
+def obtener_solicitud_con_pin(pin):
+    conn = sql.connect("AppDB.db")
+    cursor = conn.cursor()
+    cursor.execute(f"SELECT * FROM FormPacientes WHERE pin LIKE '{pin}'")
+
+    solicitudes = cursor.fetchall() # Te trae una lista de listas
+    conn.commit()
+    conn.close()
+
+    if len(solicitudes) > 0:
+
+        def from_string_to_list(text):
+            return text.replace('[', '').replace(']', '').split()
+
+        solicitud = {
+            "nombre_completo": solicitudes[0][1],
+            "cedula": solicitudes[0][2],
+            "respiracion": solicitudes[0][3],
+            "piel": solicitudes[0][4],
+            "fiebre": solicitudes[0][5],
+            "neurologicos": solicitudes[0][6],
+            "conciencia": solicitudes[0][7],
+            "dolor": solicitudes[0][8],
+            "lugar_dolor": from_string_to_list(solicitudes[0][9]),
+            "vomito_diarrea": solicitudes[0][10],
+            "pulso": solicitudes[0][11],
+            "sangrado": solicitudes[0][12],
+            "lugar_sangrado": solicitudes[0][13],
+            "alergias": from_string_to_list(solicitudes[0][14]),
+            "otras_alergias": solicitudes[0][15],
+            "cronicas": from_string_to_list(solicitudes[0][16]),
+            "otras_cronicas": solicitudes[0][17],
+            "alimento": solicitudes[0][18],
+            "evento": from_string_to_list(solicitudes[0][19]),
+            "tipo_sangre": solicitudes[0][20],
+            "comentarios": solicitudes[0][21],
+            "pin": solicitudes[0][22]
+        }
+        return solicitud
+
+    return
+
+def obtener_todas_las_solicitudes():
+    conn = sql.connect("AppDB.db")
+    cursor = conn.cursor()
+
+    cursor.execute(f"SELECT * FROM FormPacientes")
+    resultados_pacientes = cursor.fetchall() # Te trae una lista de listas
+
+    cursor.execute(f"SELECT * FROM FormParamedicos")
+    resultados_paramedicos = cursor.fetchall() # Te trae una lista de listas
+
+    conn.commit()
+    conn.close()
+
+    if len(resultados_pacientes) > 0:
+
+        solicitudes = []
+
+        def from_string_to_list(text):
+            return text.replace('[', '').replace(']', '').split(',')
+
+        for s in resultados_pacientes:  
+            solicitudes.append({
+                "id": s[0],
+                "nombre_completo": s[1],
+                "cedula": s[2],
+                "respiracion": s[3],
+                "piel": s[4],
+                "fiebre": s[5],
+                "neurologicos": s[6],
+                "conciencia": s[7],
+                "dolor": s[8],
+                "lugar_dolor": from_string_to_list(s[9]),
+                "vomito_diarrea": s[10],
+                "pulso": s[11],
+                "sangrado": s[12],
+                "lugar_sangrado": s[13],
+                "alergias": from_string_to_list(s[14]),
+                "otras_alergias": s[15],
+                "cronicas": from_string_to_list(s[16]),
+                "otras_cronicas": s[17],
+                "alimento": s[18],
+                "evento": from_string_to_list(s[19]),
+                "tipo_sangre": s[20],
+                "comentarios": s[21],
+                "pin": s[22]
+            })
+
+        for s in resultados_paramedicos:
+            solicitudes.append({
+                "id": s[0],
+                "respiracion": s[1],
+                "saturacion": s[2],
+                "piel": s[3],
+                "traumatismos": s[4],
+                "temperatura": s[5],
+                "neurologicos": s[6],
+                "conciencia": s[7],
+                "dolor": s[8],
+                "lugar_dolor": from_string_to_list(s[9]),
+                "vomito_diarrea": s[10],
+                "pulso": s[11],
+                "sangrado": s[12],
+                "lugar_sangrado": s[13],
+                "alergias": from_string_to_list(s[14]),
+                "otras_alergias": s[15],
+                "cronicas": from_string_to_list(s[16]),
+                "otras_cronicas": s[17],
+                "alimento": s[18],
+                "evento": from_string_to_list(s[19]),
+                "tipo_sangre": s[20],
+                "comentarios": s[21]
+            })
+
+        return solicitudes
+
+    return
+
+
+
 pin = generar_pin()
 
 app = Flask(__name__)
@@ -224,6 +345,7 @@ def consultar_pin():
     return render_template("consultar_pin.html",pin = pin)
 
 @app.route('/paramedicos/estado', methods=['GET', 'POST'])
+@app.errorhandler(404)
 def paramedicos_estado():
     if request.method == 'POST':
         respiracion = request.form['respiracion']
@@ -263,9 +385,34 @@ def paramedicos_estado():
 
     return render_template("paramedicos_estado.html")
 
-@app.route('/paramedicos/confirmado', methods=['GET', 'POST'])
-def formulario_estado_confirmado():
-    return render_template("paramedicos_estado_confirmado.html")
+@app.route('/recepcion/lista', methods=['GET', 'POST'])
+def recepcion_lista():
+    solicitudes = obtener_todas_las_solicitudes()
+    return render_template("recepcion_lista.html", solicitudes=solicitudes)
+
+@app.route('/recepcion/verificar', methods=['GET'])
+def recepcion_verificar():
+    print(request.args)
+    pin = request.args['pin']
+    solicitud = obtener_solicitud_con_pin(pin)
+    if solicitud:
+        return redirect(url_for('recepcion_solicitud', pin=pin))
+    else:
+        abort(404)
+
+@app.errorhandler(404)
+def solicitud_no_encontrada(error):
+    print(error)
+    return render_template('solicitud_no_encontrada.html'), 404
+
+
+@app.route('/recepcion/solicitud/<pin>', methods=['GET'])
+def recepcion_solicitud(pin=None):
+
+    solicitud = obtener_solicitud_con_pin(pin)
+
+    return render_template('recepcion_solicitud.html', solicitud=solicitud)
+
 
 @socketio.on('pin solicitado')
 def refrescar_pin():

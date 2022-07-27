@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recepción - Lista de solicitudes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="p-4">
+    <div class="relative rounded-xl overflow-auto bg-slate-700 p-4">
+      <form method="GET" action="{{url_for('recepcion_verificar')}}">
+        <div class="flex justify-center items-center gap-4">
+          <input
+            class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mt-auto mb-auto"
+            name="pin"
+            placeholder="Ingresar el pin a verificar"
+            maxlength="4"
+          />
+          <input
+            class="px-2 py-1 bg-slate-200 text-slate-700 rounded"
+            type="submit"
+            value="Verificar"
+          />
+        </div>
+      </form>
+
+      <div class="shadow-sm overflow-hidden my-8">
+        <table class="border-collapse table-auto w-full text-sm">
+          <thead>
+            <tr>
+              <th
+                class="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left"
+              >
+                Descripción breve
+              </th>
+              <th
+                class="border-b dark:border-slate-600 font-medium p-4 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left"
+              >
+                Solicitante
+              </th>
+              <th
+                class="border-b dark:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left"
+              >
+                Código de Triage
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-white dark:bg-slate-800">
+            {% for solicitud in solicitudes %}
+            <tr>
+              <td
+                class="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"
+              >
+                Alergias: {{', '.join(solicitud['alergias'])}}{% if
+                solicitud['alergias']|length > 0 and solicitud['alergias'][0] !=
+                '' %}, {% endif %} {% if solicitud['otras_alergias'] %}
+                {{solicitud['otras_alergias']}} {% endif %}
+              </td>
+              <td
+                class="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"
+              >
+                {% if 'nombre_completo' in solicitud.keys() %}
+                {{solicitud['nombre_completo']}} {% else %} Paramédico {% endif
+                %}
+              </td>
+              <td
+                class="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400"
+              >
+                100
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
