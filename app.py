@@ -36,26 +36,13 @@ def creatTableFormularioParamedicos():                           # Crear tabla p
     conn = sql.connect("AppDB.db")
     cursor = conn.cursor()
     cursor.execute(
-        """ CREATE TABLE IF NOT EXISTS solicitudesParamedicos (
-            id_sol integer primary key AUTOINCREMENT,
-            estado text NOT NULL,
-            tipo text NOT NULL
-        )"""
-    )
-    conn.commit()
-    conn.close()
-
-def creatTableFormularioPacientes():                           # Crear tabla para Solicitudes
-    conn = sql.connect("AppDB.db")
-    cursor = conn.cursor()
-    cursor.execute(
-        """ CREATE TABLE IF NOT EXISTS solicitudesPacientes (
-            id_form_paci integer primary key AUTOINCREMENT,
-            nombre_completo text,
-            cedula text,
+        """ CREATE TABLE IF NOT EXISTS FormParamedicos (
+            id_form_para integer primary key AUTOINCREMENT,
             respiracion text,
+            saturacion text,
             piel text,
-            fiebre text,
+            traumatismos text,
+            temperatura text,
             neurologicos text,
             conciencia text,
             dolor text,
@@ -77,6 +64,39 @@ def creatTableFormularioPacientes():                           # Crear tabla par
     conn.commit()
     conn.close()
 
+def creatTableFormularioPacientes():                           # Crear tabla para Solicitudes
+    conn = sql.connect("AppDB.db")
+    cursor = conn.cursor()
+    cursor.execute(
+        """ CREATE TABLE IF NOT EXISTS FormPacientes (
+            id_form_paci integer primary key AUTOINCREMENT,
+            nombre_completo text,
+            cedula text,
+            respiracion text,
+            piel text,
+            fiebre text,
+            neurologicos text,
+            conciencia text,
+            dolor text,
+            lugar_dolor text,
+            vomito_diarrea text,
+            pulso text,
+            sangrado text,
+            lugar_sangrado text,
+            alergias text,
+            otras_alergias text,
+            cronicas text,
+            otras_cronicas text,
+            alimento text,
+            evento text,
+            tipo_sangre text,
+            comentarios text,
+            pin text
+        )"""
+    )
+    conn.commit()
+    conn.close()
+
 def insertRowParamedicos(nombre, correo, contrasena):         # Insertar fila
     conn = sql.connect("AppDB.db")
     cursor = conn.cursor()
@@ -85,10 +105,17 @@ def insertRowParamedicos(nombre, correo, contrasena):         # Insertar fila
     conn.commit()
     conn.close()
 
+def insertRowFormParamedicos(respiracion, saturacion, piel, traumatismos, temperatura, neurologicos, conciencia, dolor, lugar_dolor, vomito_diarrea, pulso, sangrado, lugar_sangrado, alergias, otras_alergias, cronicas, otras_cronicas, alimento, evento, tipo_sangre, comentarios):         # Insertar fila
+    conn = sql.connect("AppDB.db")
+    cursor = conn.cursor()
+    instruccion = f"INSERT INTO FormParamedicos(respiracion, saturacion, piel, traumatismos, temperatura, neurologicos, conciencia, dolor, lugar_dolor, vomito_diarrea, pulso, sangrado, lugar_sangrado, alergias, otras_alergias, cronicas, otras_cronicas, alimento, evento, tipo_sangre, comentarios) VALUES ('{respiracion}', '{saturacion}', '{piel}', '{traumatismos}', '{temperatura}', '{neurologicos}', '{conciencia}', '{dolor}', '{lugar_dolor}', '{vomito_diarrea}', '{pulso}', '{sangrado}', '{lugar_sangrado}', '{alergias}', '{otras_alergias}', '{cronicas}', '{otras_cronicas}', '{alimento}', '{evento}', '{tipo_sangre}', '{comentarios}')"
+    cursor.execute(instruccion)
+    conn.commit()
+    conn.close()
 def insertRowFormPacientes(nombre_completo, cedula, respiracion, piel, fiebre, neurologicos, conciencia, dolor, lugar_dolor, vomito_diarrea, pulso, sangrado, lugar_sangrado, alergias, otras_alergias, cronicas, otras_cronicas, alimento, evento, tipo_sangre, comentarios):         # Insertar fila
     conn = sql.connect("AppDB.db")
     cursor = conn.cursor()
-    instruccion = f"INSERT INTO solicitudesPacientes(nombre_completo, cedula, respiracion, piel, fiebre, neurologicos, conciencia, dolor, lugar_dolor, vomito_diarrea, pulso, sangrado, lugar_sangrado, alergias, otras_alergias, cronicas, otras_cronicas, alimento, evento, tipo_sangre, comentarios) VALUES ('{nombre_completo}', '{cedula}', '{respiracion}', '{piel}', '{fiebre}', '{neurologicos}', '{conciencia}', '{dolor}', '{lugar_dolor}', '{vomito_diarrea}', '{pulso}', '{sangrado}', '{lugar_sangrado}', '{alergias}', '{otras_alergias}', '{cronicas}', '{otras_cronicas}', '{alimento}', '{evento}', '{tipo_sangre}', '{comentarios}')"
+    instruccion = f"INSERT INTO FormPacientes(nombre_completo, cedula, respiracion, piel, fiebre, neurologicos, conciencia, dolor, lugar_dolor, vomito_diarrea, pulso, sangrado, lugar_sangrado, alergias, otras_alergias, cronicas, otras_cronicas, alimento, evento, tipo_sangre, comentarios) VALUES ('{nombre_completo}', '{cedula}', '{respiracion}', '{piel}', '{fiebre}', '{neurologicos}', '{conciencia}', '{dolor}', '{lugar_dolor}', '{vomito_diarrea}', '{pulso}', '{sangrado}', '{lugar_sangrado}', '{alergias}', '{otras_alergias}', '{cronicas}', '{otras_cronicas}', '{alimento}', '{evento}', '{tipo_sangre}', '{comentarios}')"
     cursor.execute(instruccion)
     conn.commit()
     conn.close()
@@ -152,7 +179,6 @@ def login_paramedicos():
 def formulario_paramedicos():
     return render_template("formulario_paramedicos.html")
 
-###################################################################
 @app.route('/paciente/enviado', methods=['GET', 'POST'])
 def enviado_pacientes():
     if request.method == 'POST':
@@ -187,7 +213,7 @@ def enviado_pacientes():
         comentarios = request.form['comentarios']
         insertRowFormPacientes(nombre_completo, cedula, respiracion, piel, fiebre, neurologicos, conciencia, dolor, lugar_dolor, vomito_diarrea, pulso, sangrado, lugar_sangrado, alergias, otras_alergias, cronicas, otras_cronicas, alimento, evento, tipo_sangre, comentarios)
     return render_template("form_enviado_pacientes.html")
-###################################################################
+
 
 
 @app.route('/paciente/pin', methods=['GET', 'POST'])
@@ -199,11 +225,55 @@ def consultar_pin():
 
 @app.route('/paramedicos/estado', methods=['GET', 'POST'])
 def paramedicos_estado():
+    if request.method == 'POST':
+        respiracion = request.form['respiracion']
+        saturacion = request.form['saturacion']
+        piel =[]
+        if "piel" in request.form.keys():
+            piel = request.form['piel']
+        traumatismos = request.form['traumatismos']
+        temperatura = request.form['temperatura']
+        neurologicos=[]
+        if "neurologicos" in request.form.keys():
+            neurologicos = request.form['neurologicos']
+        conciencia = request.form['conciencia']
+        dolor = request.form['dolor']
+        lugar_dolor=[]
+        if "lugar_dolor" in request.form.keys():
+            lugar_dolor = request.form['lugar_dolor']
+        vomito_diarrea = request.form['vomito_diarrea']
+        pulso = request.form['pulso']
+        sangrado = request.form['sangrado']
+        lugar_sangrado = request.form['lugar_sangrado']
+        alergias = []
+        if "alergias" in request.form.keys():
+            alergias = request.form['alergias']
+        otras_alergias = request.form['otras_alergias']
+        cronicas = []
+        if "cronicas" in request.form.keys():
+            cronicas = request.form['cronicas']
+        otras_cronicas=request.form['otras_cronicas']
+        alimento = request.form['alimento']
+        evento = []
+        if "eventos" in request.form.keys():
+            evento = request.form['evento']
+        tipo_sangre = request.form['tipo_sangre']
+        comentarios = request.form['comentarios']
+        insertRowFormParamedicos(respiracion, saturacion, piel, traumatismos, temperatura, neurologicos, conciencia, dolor, lugar_dolor, vomito_diarrea, pulso, sangrado, lugar_sangrado, alergias, otras_alergias, cronicas, otras_cronicas, alimento, evento, tipo_sangre, comentarios)
+
     return render_template("paramedicos_estado.html")
 
 @app.route('/paramedicos/confirmado', methods=['GET', 'POST'])
 def formulario_estado_confirmado():
     return render_template("paramedicos_estado_confirmado.html")
+
+@app.route('/recepcion/confirmado', methods=['GET', 'POST'])
+def recepcion_confirmado():
+    return render_template("confirmacion_de_solicitud.html")
+
+@app.route('/recepcion/lista', methods=['GET', 'POST'])
+def recepcion_lista():
+    return render_template("lista_de_solicitudes.html")
 
 @socketio.on('pin solicitado')
 def refrescar_pin():
