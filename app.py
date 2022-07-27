@@ -37,7 +37,7 @@ def BuscarPin(pin):
     cursor = conn.cursor()
     instruccion=f"SELECT * FROM FormPacientes WHERE pin LIKE {pin}"
     cursor.execute(instruccion)
-    paciente = cursor.fetchall()
+    paciente = cursor.fetchall()[0]
     conn.commit()
     conn.close()  
     return paciente
@@ -103,7 +103,8 @@ def creatTableFormularioPacientes():                           # Crear tabla par
             evento text,
             tipo_sangre text,
             comentarios text,
-            pin text
+            pin text,
+            verificado integer default 0
         )"""
     )
     conn.commit()
@@ -114,6 +115,15 @@ def insertRowParamedicos(nombre, correo, contrasena):         # Insertar fila
     conn = sql.connect("AppDB.db")
     cursor = conn.cursor()
     instruccion = f"INSERT INTO paramedicos(nombre, correo, contraseña) VALUES ('{nombre}', '{correo}', '{contrasena}')"
+    cursor.execute(instruccion)
+    conn.commit()
+    conn.close()
+
+
+def cambiarVerificacion(pin):         # Insertar fila
+    conn = sql.connect("AppDB.db")
+    cursor = conn.cursor()
+    instruccion = f"UPDATE FormPacientes SET verificado = 1 WHERE pin LIKE '{pin}'"
     cursor.execute(instruccion)
     conn.commit()
     conn.close()
@@ -208,16 +218,16 @@ def generar_descripcion_pacientes(id):
     print(descripcion)
     print(triage_paramedicos(lista))
 
-generar_descripcion_pacientes(3)
-pin = generar_pin()
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'hackaton'
 socketio = SocketIO(app)
 
+
 @app.route('/', methods=['GET', 'POST'])
 def inicio():
     return render_template("index.html")
+
 
 @app.route('/paciente', methods=['GET', 'POST'])
 def formulario_pacientes():
@@ -237,7 +247,12 @@ def login_paramedicos():
             return redirect("/paramedicos/login?error=1")
     return render_template("login_paramedicos.html")
 
-
+@app.route('/verficarpin', methods=['GET'])
+def verificar_pin():
+    pin=request.args["pin"]
+    # TO DO: Hacer update de verificacion del ROW con el PIN X
+    cambiarVerificacion(pin)
+    return redirect(url_for("recepcion_lista"))
 
 @app.route('/recepcion/login', methods=['GET', 'POST'])
 def login_recepcion():
@@ -256,6 +271,7 @@ def login_recepcion():
 @app.route('/paramedicos/formulario', methods=['GET', 'POST'])
 def formulario_paramedicos():
     return render_template("formulario_paramedicos.html")
+
 
 @app.route('/paciente/enviado', methods=['GET', 'POST'])
 def enviado_pacientes():
@@ -306,6 +322,7 @@ def consultar_pin(id):
     conn.close()
     return render_template("consultar_pin.html", pin=pin)
 
+
 @app.route('/paramedicos/estado', methods=['GET', 'POST'])
 def paramedicos_estado():
     if request.method == 'POST':
@@ -346,22 +363,24 @@ def paramedicos_estado():
 
     return render_template("paramedicos_estado.html")
 
+
 @app.route('/paramedicos/confirmado', methods=['GET', 'POST'])
 def formulario_estado_confirmado():
     return render_template("paramedicos_estado_confirmado.html")
+
 
 @app.route('/recepcion/confirmado', methods=['GET', 'POST'])
 def recepcion_confirmado():
     return render_template("confirmacion_de_solicitud.html")
 
-########################################################################################
+
 @app.route('/recepcion/lista', methods=['GET', 'POST'])
 def recepcion_lista():
     if request.method == 'POST':
         pass
 
     return render_template("lista_de_solicitudes.html")
-########################################################################################
+
 
 @socketio.on('pin solicitado')
 def refrescar_pin(id):

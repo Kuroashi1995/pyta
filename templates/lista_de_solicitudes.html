@@ -26,8 +26,9 @@
               Se muestran las solicitudes abiertas
             </p>
           </b>
-          <div>
+          <form action="{{url_for('verificar_pin')}}">
             <input
+              name="pin"
               type="text"
               placeholder="Ingresar el pin a verificar"
               class="input w-full max-w-xs"
@@ -37,7 +38,7 @@
               type="submit"
               value="Verificar"
             />
-          </div>
+          </form>
         </div>
       </div>
       <div class="mt-8 flex flex-col">
