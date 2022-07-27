@@ -199,7 +199,6 @@ def generar_descripcion_pacientes(id):
     lista=cursor.fetchall()[0]
     descripcion = 'LLegando paciente con: '
     for elemento in lista:
-        print(elemento)
         if elemento != 'sin problemas' and elemento != '[]' and elemento != '' and elemento != None:
             if elemento == "dolor moderado" or elemento == "dolor intenso":
                 descripcion += f'{elemento} '
@@ -237,6 +236,20 @@ def login_paramedicos():
         elif valor == 0:
             return redirect("/paramedicos/login?error=1")
     return render_template("login_paramedicos.html")
+
+
+
+@app.route('/recepcion/login', methods=['GET', 'POST'])
+def login_recepcion():
+    if request.method == 'POST':
+        email_medico = request.form['correos']
+        contrasena_medico = request.form['contrasena']
+        valor = verificarParmedico(email_medico, contrasena_medico)
+        if valor==1:
+            return redirect('/recepcion/lista')
+        elif valor == 0:
+            return redirect("/recepcion/login?error=1")
+    return render_template("login_recepcion.html")
 
 
 
