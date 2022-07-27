@@ -267,6 +267,14 @@ def paramedicos_estado():
 def formulario_estado_confirmado():
     return render_template("paramedicos_estado_confirmado.html")
 
+@app.route('/recepcion/confirmado', methods=['GET', 'POST'])
+def recepcion_confirmado():
+    return render_template("confirmacion_de_solicitud.html")
+
+@app.route('/recepcion/lista', methods=['GET', 'POST'])
+def recepcion_lista():
+    return render_template("lista_de_solicitudes.html")
+
 @socketio.on('pin solicitado')
 def refrescar_pin():
     print("estamos en evento pin solicitado")
