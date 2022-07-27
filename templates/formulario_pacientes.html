@@ -85,24 +85,11 @@
             </b>
             <div class="flex items-center mb-4">
               <input
-                id="coloracion"
-                type="radio"
-                value=""
-                name="piel1"
-                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-              />
-              <label
-                for="coloracion"
-                class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-500"
-                >Coloración morada en uñas o labios</label
-              >
-            </div>
-            <div class="flex items-center">
-              <input
                 id="sin_razgos"
+                checked
                 type="radio"
-                value=""
-                name="piel1"
+                value="sin problemas"
+                name="piel"
                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               />
               <label
@@ -111,15 +98,44 @@
                 >Sin razgos negativos</label
               >
             </div>
+            <div class="flex items-center mb-4">
+              <input
+                id="coloracion"
+                type="radio"
+                value="Coloracion en unhas y labios"
+                name="piel"
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              />
+              <label
+                for="coloracion"
+                class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-500"
+                >Coloración morada en uñas o labios</label
+              >
+            </div>
             <b>
               <h2 class="mt-3 mb-4">Fiebre</h2>
             </b>
             <div class="flex items-center mb-4">
               <input
                 id="fiebre"
+                checked
                 type="radio"
-                value=""
-                name="fiebre1"
+                value="sin problemas"
+                name="fiebre"
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              />
+              <label
+                for="fiebre"
+                class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-500"
+                >Sin fiebre</label
+              >
+            </div>
+            <div class="flex items-center mb-4">
+              <input
+                id="fiebre1"
+                type="radio"
+                value="fiebre media"
+                name="fiebre"
                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               />
               <label
@@ -130,14 +146,14 @@
             </div>
             <div class="flex items-center">
               <input
-                id="fiebre3"
+                id="fiebre2"
                 type="radio"
-                value=""
-                name="fiebre1"
+                value="fiebre alta"
+                name="fiebre"
                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               />
               <label
-                for="fiebre3"
+                for="fiebre2"
                 class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-500"
                 >Alta</label
               >
@@ -147,23 +163,10 @@
             </b>
             <div class="flex items-center mb-4">
               <input
-                id="neuro1"
-                type="radio"
-                value=""
-                name="neurologicos"
-                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-              />
-              <label
-                for="neuro1"
-                class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-500"
-                >Convulsiones</label
-              >
-            </div>
-            <div class="flex items-center">
-              <input
                 id="nauro2"
+                checked
                 type="radio"
-                value=""
+                value="sin problemas"
                 name="neurologicos"
                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               />
@@ -173,15 +176,30 @@
                 >Ninguna</label
               >
             </div>
+            <div class="flex items-center mb-4">
+              <input
+                id="neuro1"
+                type="radio"
+                value="convulsiones"
+                name="neurologicos"
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              />
+              <label
+                for="neuro1"
+                class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-500"
+                >Convulsiones</label
+              >
+            </div>
             <b>
               <h2 class="mt-3 mb-4">Nivel de conciencia</h2>
             </b>
             <div class="flex items-center mb-4">
               <input
                 id="conci1"
+                checked
                 type="radio"
-                value=""
-                name="concienciaa"
+                value="sin problemas"
+                name="conciencia"
                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               />
               <label
@@ -194,8 +212,8 @@
               <input
                 id="conci2"
                 type="radio"
-                value=""
-                name="concienciaa"
+                value="inconciente"
+                name="conciencia"
                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               />
               <label
@@ -208,8 +226,8 @@
               <input
                 id="conci3"
                 type="radio"
-                value=""
-                name="concienciaa"
+                value="confundido"
+                name="conciencia"
                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               />
               <label
@@ -224,29 +242,44 @@
             <div class="flex items-center mb-4">
               <input
                 id="pain1"
+                checked
                 type="radio"
-                value=""
+                value="sin problemas"
                 name="dolor"
                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               />
               <label
                 for="pain1"
                 class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-500"
-                >Intenso
+                >Sin dolor
+              </label>
+            </div>
+            <div class="flex items-center mb-4">
+              <input
+                id="pain1"
+                type="radio"
+                value="dolor medio"
+                name="dolor"
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              />
+              <label
+                for="pain1"
+                class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-500"
+                >Medio
               </label>
             </div>
             <div class="flex items-center mb-4">
               <input
                 id="pain2"
                 type="radio"
-                value=""
+                value="dolor intenso"
                 name="dolor"
                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               />
               <label
                 for="pain2"
                 class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-500"
-                >Moderado
+                >Intenso
               </label>
             </div>
 
@@ -257,8 +290,9 @@
               <div class="flex items-center mb-4">
                 <input
                   id="cabeza"
+                  name = "lugar_dolor"
                   type="checkbox"
-                  value=""
+                  value="dolor de cabeza"
                   class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
                 <label
@@ -270,8 +304,9 @@
               <div class="flex items-center mb-4">
                 <input
                   id="cuellotronco"
+                  name = "lugar_dolor"
                   type="checkbox"
-                  value=""
+                  value="dolor de cuello y tronco"
                   class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
                 <label
@@ -285,8 +320,9 @@
               <div class="flex items-center mb-4">
                 <input
                   id="Hombro"
+                  name = "lugar_dolor"
                   type="checkbox"
-                  value=""
+                  value="dolor de hombro"
                   class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
                 <label
@@ -299,7 +335,8 @@
                 <input
                   id="Pecho"
                   type="checkbox"
-                  value=""
+                  name="lugar_dolor"
+                  value="dolor de pecho"
                   class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
                 <label
@@ -313,8 +350,9 @@
               <div class="flex items-center mb-4">
                 <input
                   id="Abdomen"
+                  name="lugar_dolor"
                   type="checkbox"
-                  value=""
+                  value="dolor de abdomen"
                   class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
                 <label
@@ -326,8 +364,9 @@
               <div class="flex items-center mb-4">
                 <input
                   id="Genital"
+                  name="lugar_dolor"
                   type="checkbox"
-                  value=""
+                  value="dolor genital"
                   class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
                 <label
@@ -341,24 +380,11 @@
               </b>
               <div class="flex items-center mb-4">
                 <input
-                  id="vomit"
-                  type="radio"
-                  value=""
-                  name="vomito1"
-                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                />
-                <label
-                  for="vomit"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-500"
-                  >Si
-                </label>
-              </div>
-              <div class="flex items-center mb-4">
-                <input
                   id="vomit2"
+                  checked
                   type="radio"
-                  value=""
-                  name="vomit2"
+                  value="sin problemas"
+                  name="vomito_diarrea"
                   class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
                 <label
@@ -367,15 +393,44 @@
                   >No
                 </label>
               </div>
+              <div class="flex items-center mb-4">
+                <input
+                  id="vomit"
+                  type="radio"
+                  value="vomito o diarrea"
+                  name="vomito_diarrea"
+                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                />
+                <label
+                  for="vomit"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-500"
+                  >Si
+                </label>
+              </div>
             </div>
             <b>
               <h2 class="mt-3 mb-4">Pulso</h2>
             </b>
             <div class="flex items-center mb-4">
               <input
+                id="pulso3"
+                checked
+                type="radio"
+                value="sin problemas"
+                name="pulso"
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              />
+              <label
+                for="pulso3"
+                class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-500"
+                >Normal
+              </label>
+            </div>
+            <div class="flex items-center mb-4">
+              <input
                 id="pulso1"
                 type="radio"
-                value=""
+                value="pulso acelerado"
                 name="pulso"
                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               />
@@ -389,7 +444,7 @@
               <input
                 id="pulso2"
                 type="radio"
-                value=""
+                value="pulso lento"
                 name="pulso"
                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               />
@@ -399,49 +454,50 @@
                 >Lento
               </label>
             </div>
-            <div class="flex items-center mb-4">
-              <input
-                id="pulso3"
-                type="radio"
-                value=""
-                name="pulso"
-                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-              />
-              <label
-                for="pulso3"
-                class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-500"
-                >Normal
-              </label>
-            </div>
             <b>
               <h2 class="mt-3 mb-4">Sangrado</h2>
             </b>
             <div class="flex items-center mb-4">
               <input
+                id="sang"
+                checked
+                type="radio"
+                value="sin problemas"
+                name="sangrado"
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              />
+              <label
+                for="sang"
+                class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-500"
+                >Sin sangrado
+              </label>
+            </div>
+            <div class="flex items-center mb-4">
+              <input
                 id="sang1"
                 type="radio"
-                value=""
+                value="poco sangrado"
                 name="sangrado"
                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               />
               <label
                 for="sang1"
                 class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-500"
-                >Mucho
+                >Poco
               </label>
             </div>
             <div class="flex items-center mb-4">
               <input
                 id="sang2"
                 type="radio"
-                value=""
+                value="mucho sangrado"
                 name="sangrado"
                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               />
               <label
                 for="sang2"
                 class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-500"
-                >Poco
+                >Mucho
               </label>
             </div>
             <b>
@@ -450,6 +506,7 @@
             <input
               class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-password"
+              name="lugar_sangrado"
               placeholder="en que parte?"
             />
             <p class="text-gray-600 text-xs italic"></p>
@@ -467,8 +524,9 @@
                 <div class="flex items-center mb-4">
                   <input
                     id="Insulina"
+                    name="alergias"
                     type="checkbox"
-                    value=""
+                    value="alergia a la insulina"
                     class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
                   <label
@@ -480,8 +538,9 @@
                 <div class="mb-4">
                   <input
                     id="Sulfaminas"
+                    name="alergias"
                     type="checkbox"
-                    value=""
+                    value="alergia a las sulfaminas"
                     class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
                   <label
@@ -493,8 +552,9 @@
                 <div class="flex items-center mb-4">
                   <input
                     id="Anticonvulsivos"
+                    name="alergias"
                     type="checkbox"
-                    value=""
+                    value="alergia a los anticonvulsivos"
                     class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
                   <label
@@ -508,8 +568,9 @@
                 <div class="flex items-center mb-4">
                   <input
                     id="Yodo"
+                    name="alergias"
                     type="checkbox"
-                    value=""
+                    value="alergia al yodo"
                     class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
                   <label
@@ -521,8 +582,9 @@
                 <div class="flex items-center mb-4">
                   <input
                     id="Penicilina"
+                    name="alergias"
                     type="checkbox"
-                    value=""
+                    value="alergia a la penicilina"
                     class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
                   <label
@@ -536,8 +598,9 @@
                 <div class="flex items-center mb-4">
                   <input
                     id="Amoxicilina"
+                    name="alergias"
                     type="checkbox"
-                    value=""
+                    value="alergia a la amoxicilina"
                     class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
                   <label
@@ -549,8 +612,9 @@
                 <div class="flex items-center mb-4">
                   <input
                     id="Morfina"
+                    name="alergias"
                     type="checkbox"
-                    value=""
+                    value="alergia a la morfina"
                     class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
                   <label
@@ -563,6 +627,7 @@
                 <input
                   class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-password"
+                  name="otras_alergias"
                   type="text"
                   placeholder="escriba aqui"
                 />
@@ -582,8 +647,9 @@
                 <div class="flex items-center mb-4">
                   <input
                     id="Epoc"
+                    name="cronicas"
                     type="checkbox"
-                    value=""
+                    value="tiene epoc"
                     class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
                   <label
@@ -595,8 +661,9 @@
                 <div class="flex items-center mb-4">
                   <input
                     id="Fuma"
+                    name="cronicas"
                     type="checkbox"
-                    value=""
+                    value="fumador"
                     class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
                   <label
@@ -608,8 +675,9 @@
                 <div class="flex items-center mb-4">
                   <input
                     id="Asma"
+                    name="cronicas"
                     type="checkbox"
-                    value=""
+                    value="asmatico"
                     class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
                   <label
@@ -621,8 +689,9 @@
                 <div class="flex items-center mb-4">
                   <input
                     id="Cardiaco"
+                    name="cronicas"
                     type="checkbox"
-                    value=""
+                    value="cardiaco"
                     class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300"
                   />
                   <label
@@ -634,8 +703,9 @@
                 <div class="flex items-center mb-4">
                   <input
                     id="Obesidad"
+                    name="cronicas"
                     type="checkbox"
-                    value=""
+                    value="obeso"
                     class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300"
                   />
                   <label
@@ -644,6 +714,15 @@
                     >Obesidad</label
                   >
                 </div>
+                <h1 class="">Otra</h1>
+                <input
+                  class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="grid-password"
+                  name="otras_cronicas"
+                  type="text"
+                  placeholder="escriba aqui"
+                />
+                <p class="text-gray-600 text-xs italic">Otras cronicas</p>
               </div>
             </div>
             <div class="flex flex-col flex-nowrap -mx-3 mb-2">
@@ -659,6 +738,7 @@
                 <input
                   class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-password"
+                  name="alimento"
                   type="text"
                   placeholder="escriba aqui"
                 />
@@ -688,8 +768,9 @@
                   <div class="flex items-center mb-4">
                     <input
                       id="Accidente"
+                      name="evento"
                       type="checkbox"
-                      value=""
+                      value="accidentado"
                       class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                     />
                   <label
@@ -701,8 +782,9 @@
                 <div class="flex items-center mb-4">
                   <input
                     id="Intoxicacion"
+                    name="evento"
                     type="checkbox"
-                    value=""
+                    value="intoxicado"
                     class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
                   <label
@@ -714,8 +796,9 @@
                 <div class="flex items-center mb-4">
                   <input
                     id="Envenenamiento"
+                    name="evento"
                     type="checkbox"
-                    value=""
+                    value="envenenado"
                     class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
                   <label
@@ -727,8 +810,9 @@
                 <div class="flex items-center mb-4">
                   <input
                     id="Subito"
+                    name="evento"
                     type="checkbox"
-                    value=""
+                    value="con evento subito"
                     class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
                   <label
@@ -740,8 +824,9 @@
                 <div class="flex items-center mb-4">
                   <input
                     id="Embarazo"
+                    name="evento"
                     type="checkbox"
-                    value=""
+                    value="embarazada"
                     class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
                   <label
@@ -753,8 +838,9 @@
                 <div class="flex items-center mb-4">
                   <input
                     id="Digestivos"
+                    name="evento"
                     type="checkbox"
-                    value=""
+                    value="con problemas digestivos"
                     class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
                   <label
@@ -766,8 +852,9 @@
                 <div class="flex items-center mb-4">
                   <input
                     id="Ginecologicos"
+                    name="evento"
                     type="checkbox"
-                    value=""
+                    value="con problemas ginecologicos o urinarios"
                     class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
                   <label
@@ -779,8 +866,9 @@
                 <div class="flex items-center mb-4">
                   <input
                     id="Oculares"
+                    name="evento"
                     type="checkbox"
-                    value=""
+                    value="con problemas oculares"
                     class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
                   <label
@@ -796,6 +884,7 @@
                   <input
                     class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     id="grid-password"
+                    name="tipo_sangre"
                     type="text"
                     placeholder="escriba aqui"
                   />
@@ -805,6 +894,7 @@
             <h1>Comentarios</h1>
             <textarea
               id="message"
+              name="comentarios"
               rows="4"
               class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Escriba aquí..."
