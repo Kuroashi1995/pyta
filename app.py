@@ -32,6 +32,17 @@ def creatTableParamedicos():                  # Crear tabla para Paramedicos
     conn.close()
 
 
+def BuscarPin(pin):
+    conn = sql.connect("AppDB.db")
+    cursor = conn.cursor()
+    instruccion=f"SELECT * FROM FormPacientes WHERE pin LIKE {pin}"
+    cursor.execute(instruccion)
+    paciente = cursor.fetchall()
+    conn.commit()
+    conn.close()  
+    return paciente
+
+
 def creatTableFormularioParamedicos():                           # Crear tabla para Solicitudes
     conn = sql.connect("AppDB.db")
     cursor = conn.cursor()
