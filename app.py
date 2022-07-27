@@ -4,7 +4,6 @@ import random
 import time
 
 auth = False
-error1=""
 paramedicos_determinantes_grave = ['no puede respirar', 'convulsiones', 'unhas y labios morados', 'hemorragia desangrante']
 paramedicos_grave = ['inconsciente', 'pulso rapido']
 paramedicos_intermedio = ['confusion','cefalea', 'sensibilidad a la luz', 'rigidez en el cuello', 'dolor en el hombro', 'saturacion menor a 95', 'fiebre alta', 'temperatura baja', 'dolor intenso','dolor moderado', 'hemorragia incontrolable', 'sangrado rectal', 'sangrado rectal', 'vomitos con sangre', 'golpe en la cabeza', 'golpe en el cuello', 'golpe en la espalda', 'fractura abierta']
@@ -73,7 +72,7 @@ def verificarParmedico(correo, contrasena):
         print(datos_contrasena[0][3])
         return 1
     elif datos_correo == [] or datos_contrasena==[]:
-        print("Contraseña y/o Correo no coinciden")
+        # print("Contraseña y/o Correo no coinciden")
         return 0
 
 def generar_pin():
@@ -98,7 +97,6 @@ def formulario_pacientes():
 
 @app.route('/paramedicos/login', methods=['GET', 'POST'])
 def login_paramedicos():
-    global error1
     if request.method == 'POST':
         email_medico = request.form['correos']
         contrasena_medico = request.form['contrasena']
@@ -106,12 +104,12 @@ def login_paramedicos():
         if valor==1:
             return redirect('/paramedicos/formulario')
         elif valor == 0:
-            error1="Contraseña y/o Correo no coinciden"
+            return redirect("/paramedicos/login?error=1")
             # print(error1)
             # return redirect('/paramedicos/login')
     # return render_template("login_paramedicos.html", error1=error1)
-            pass
-    return render_template("login_paramedicos.html", error1=error1)
+            # pass
+    return render_template("login_paramedicos.html")
 
 
 

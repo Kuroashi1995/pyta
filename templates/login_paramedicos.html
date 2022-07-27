@@ -55,11 +55,22 @@
               <div>
                 <input type="submit" value="Enviar">
               </div>
-              <p id="error1">{{ error1 }}</p>
+              <p style="visibility: hidden;" id="error">Contraseña y/o Correo no coinciden</p>
             </form>
           </div>
         </div>
       </div>
     </div>
+    <script>
+
+      const error= new URLSearchParams(location.search);
+      // console.log(error)
+      for(const [key,value] of error){
+        console.log(`${key}:${value}`);
+      }
+      if (error.get("error")==1){
+        document.getElementById("error").style.visibility = "visible";
+      }
+    </script>
   </body>
 </html>
