@@ -10,46 +10,50 @@
   <body>
     <div class="font-sans">
       <div
-        class="relative min-h-screen flex flex-col sm:justify-center items-center bg-gray-100"
+        class="flex flex-col min-h-screen sm:justify-center items-center h-full bg-gradient-to-tl from-blue-400 to-red-900 w-full py-16 px-4"
       >
-        <div class="relative sm:max-w-sm w-full">
-          <div
-            class="card bg-blue-300 shadow-lg w-full h-full rounded-3xl absolute transform -rotate-6"
-          ></div>
-          <div
-            class="card bg-red-400 shadow-lg w-full h-full rounded-3xl absolute transform rotate-6"
-          ></div>
-          <div
-            class="relative w-full rounded-3xl px-6 py-4 bg-gray-100 shadow-md"
-          >
-            <br />
-            <label
-              for=""
-              class="block mt-3 text-sm text-gray-800 text-center font-semibold"
+        <div
+          class="relative min-h-screen flex flex-col sm:justify-center items-center bg-gray-100"
+        >
+          <div class="relative sm:max-w-sm w-full">
+            <div
+              class="card bg-blue-300 shadow-lg w-full h-full rounded-3xl absolute transform -rotate-6"
+            ></div>
+            <div
+              class="card bg-red-400 shadow-lg w-full h-full rounded-3xl absolute transform rotate-6"
+            ></div>
+            <div
+              class="relative w-full rounded-3xl px-6 py-4 bg-gray-100 shadow-md"
             >
-              Estado confirmado
-            </label>
-            <br />
-            <img
-              src="https://images.emojiterra.com/google/android-nougat/512px/2714.png"
-              alt=""
-            />
-            <div class="mt-7">
+              <br />
               <label
                 for=""
                 class="block mt-3 text-sm text-gray-800 text-center font-semibold"
               >
+                <p class="text-3xl">Confirmado!</p>
               </label>
-
-              <div class="mt-7">
-                <a
-                  href="{{url_for('formulario_paramedicos')}}"
-                  class="bg-red-400 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105 block text-center"
-                >
-                  Agregar otro paciente
-                </a>
-              </div>
               <br />
+              <img
+                src="https://images.emojiterra.com/google/android-nougat/512px/2714.png"
+                alt=""
+              />
+              <div class="mt-7">
+                <label
+                  for=""
+                  class="block mt-3 text-sm text-gray-800 text-center font-semibold"
+                >
+                </label>
+
+                <div class="mt-7">
+                  <a
+                    href="{{url_for('formulario_paramedicos')}}"
+                    class="bg-red-400 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105 block text-center"
+                  >
+                    Agregar otro paciente
+                  </a>
+                </div>
+                <br />
+              </div>
             </div>
           </div>
         </div>
