@@ -4,791 +4,872 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Formulario Paramédicos</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <h1 class="underline mb-10 text-center">Signos y sintomas</h1>
-    <div>
+    <div class="font-sans">
+      <div
+        class="flex flex-col min-h-screen sm:justify-center items-center h-full bg-gradient-to-tl from-blue-400 to-red-900 w-full py-16 px-4"
+      >
+        <!--agrego flex + flex-wrap y saque back ground gris, bg- degradado-->
+        <div class="relative sm:max-w-sm w-full h-full">
+          <div
+            class="flex-auto card bg-blue-200 shadow-lg w-full h-full rounded-3xl absolute transform -rotate-3"
+          ></div>
+          <div
+            class="flex-auto card bg-red-400 shadow-lg w-full h-full rounded-3xl absolute transform rotate-3"
+          ></div>
+          <div
+            class="relative w-full h-full rounded-3xl px-10 py-20 bg-gray-100 shadow-md"
+          >
+            <h1 class="font-bold mb-4 text-center text-red-600 text-2xl">
+              Signos y síntomas
+            </h1>
 
-      <h2 class="mt-3 underline mb-4 formulario1">Respiracion</h2>
-      <div class="flex items-center mb-4">
-        <input
-          id="default-checkbox"
-          type="checkbox"
-          value=""
-          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-        />
-        <label
-          for="default-checkbox"
-          class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Vias respiratorias obstruidas</label
-        >
-      </div>
-      <div class="flex items-center mb-4">
-        <input
-          id="default-checkbox"
-          type="checkbox"
-          value=""
-          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-        />
-        <label
-          for="default-checkbox"
-          class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Dificultad para respirar</label
-        >
-      </div>
-      <h6>Saturacion</h6>
-      <input class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" placeholder="escriba aqui">
-      </div>
-  <div>  
-    <h2 class="mt-3 underline mb-4">Piel</h2>
-    <div class="flex items-center mb-4">
-      <input
-        id="default-checkbox"
-        type="checkbox"
-        value=""
-        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-      />
-      <label
-        for="default-checkbox"
-        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-        >Coloracion morada en uñas o labios</label
-      >
-    </div>
-    <div class="flex items-center mb-4">
-      <input
-        id="default-checkbox"
-        type="checkbox"
-        value=""
-        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-      />
-      <label
-        for="default-checkbox"
-        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-        >infecciones</label
-      >
-    </div>
-    <div class="flex items-center mb-4">
-      <input
-        id="default-checkbox"
-        type="checkbox"
-        value=""
-        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-      />
-      <label
-        for="default-checkbox"
-        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-        >Erupciones generalizadas</label
-      >
-    </div>
-  </div>
-        </div>
-      <h1 class="underline">Traumatismos</h1>
-    </div>
-    <h6>Localizacion</h6>
-    <input class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" placeholder="escriba aqui">
-    </div>
-    <div> <h1 class="underline"> Fiebre </h1>
-    <h6>temperatura</h6>
-  <input class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" placeholder="escriba aqui">
-  </div>
-  </div>
-    <h2 class="mt-3 underline mb-4">Neurologicos</h2>
-<div class="flex items-center mb-4">
-      <input
-        id="default-checkbox"
-        type="checkbox"
-        value=""
-        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-      />
-      <label
-        for="default-checkbox"
-        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-        >Convulsiones</label
-      >
-    </div>
-    <div class="flex items-center mb-4">
-      <input
-        id="default-checkbox"
-        type="checkbox"
-        value=""
-        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-      />
-      <label
-        for="default-checkbox"
-        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-        >Sensibilidad a la luz</label
-      >
-    </div>
-    <div class="flex items-center mb-4">
-      <input
-        id="default-checkbox"
-        type="checkbox"
-        value=""
-        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-      />
-      <label
-        for="default-checkbox"
-        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-        >Rigidez en el cuello</label
-      >
-    </div>
-    <div class="flex items-center mb-4">
-      <input
-        id="default-checkbox"
-        type="checkbox"
-        value=""
-        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-      />
-      <label
-        for="default-checkbox"
-        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-        >Perdida de la audicion</label
-      >
-    </div>
-    <div class="flex items-center mb-4">
-      <input
-        id="default-checkbox"
-        type="checkbox"
-        value=""
-        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-      />
-      <label
-        for="default-checkbox"
-        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-        >Entumecimiento</label
-      >
-    </div>
-    
-    <h2 class="mt-3 underline mb-4">Nivel de conciencia</h2>
-    <div class="flex items-center mb-4">
-      <input
-        id="conci1"
-        type="radio"
-        value=""
-        name="concienciaa"
-        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-      />
-      <label
-        for="conci1"
-        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-        >Consciente</label
-      >
-    </div>
-    <div class="flex items-center">
-      <input
-        id="conci2"
-        type="radio"
-        value=""
-        name="concienciaa"
-        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-      />
-      <label
-        for="conci2"
-        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-        >Inconsciente</label
-      >
-    </div>
-    <div class="flex items-center">
-      <input
-        id="conciencia3"
-        type="radio"
-        value=""
-        name="concienciaa"
-        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-      />
-      <label
-        for="conci3"
-        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-        >Confundido</label
-      >
-    </div>
-    <h2 class="mt-3 underline mb-4">Nivel del dolor</h2>
-    <div class="flex items-center mb-4">
-      <input
-        id="pain1"
-        type="radio"
-        value=""
-        name="dolor"
-        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-      />
-      <label
-        for="pain1"
-        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-        >Intenso
-      </label>
-    </div>
-    <div class="flex items-center">
-      <input
-        id="pain2"
-        type="radio"
-        value=""
-        name="dolor"
-        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-      />
-      <label
-        for="pain2"
-        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-        >Moderado
-      </label>
-    </div>
+          
+            <div>
+              <h2 class="mt-3 font-bold mb-4 formulario1">Respiración</h2>
+              <div class="flex items-center mb-4">
+                <input
+                  id="Vías_respi"
+                  type="checkbox"
+                  value=""
+                  class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                />
+                <label
+                  for="Vías_respi"
+                  class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                  >Vías respiratorias obstruidas</label
+                >
+              </div>
+              <div class="flex items-center mb-4">
+                <input
+                  id="Dificultad_para_respirar"
+                  type="checkbox"
+                  value=""
+                  class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                />
+                <label
+                  for="Dificultad_para_respirar"
+                  class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                  >Dificultad para respirar</label
+                >
+              </div>
+              <h6>Saturación</h6>
+              <input
+                class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="grid-password"
+                placeholder="escriba aqui"
+              />
+            </div>
+            <div>
+              <h2 class="mt-3 font-bold mb-4">Piel</h2>
+              <div class="flex items-center mb-4">
+                <input
+                  id="Coloración"
+                  type="checkbox"
+                  value=""
+                  class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                />
+                <label
+                  for="Coloración"
+                  class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                  >Coloración morada en uñas o labios</label
+                >
+              </div>
+              <div class="flex items-center mb-4">
+                <input
+                  id="Infecciones"
+                  type="checkbox"
+                  value=""
+                  class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                />
+                <label
+                  for="Infecciones"
+                  class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                  >Infecciones</label
+                >
+              </div>
+              <div class="flex items-center mb-4">
+                <input
+                  id="Erupciones"
+                  type="checkbox"
+                  value=""
+                  class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                />
+                <label
+                  for="Erupciones"
+                  class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                  >Erupciones generalizadas</label
+                >
+              </div>
+            </div>
+            <h1 class="font-bold">Traumatismos</h1>
+            <h6>Localización</h6>
+            <input
+              class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="grid-password"
+              placeholder="escriba aqui"
+            />
+            <div>
+              <h1 class="font-bold">Fiebre</h1>
+              <h6>Temperatura</h6>
+              <input
+                class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="grid-password"
+                placeholder="escriba aqui"
+              />
+            </div>
+            <h2 class="mt-3 font-bold mb-4">Neurológicos</h2>
+            <div class="flex items-center mb-4">
+              <input
+                id="Convulsiones"
+                type="checkbox"
+                value=""
+                class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              />
+              <label
+                for="Convulsiones"
+                class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                >Convulsiones</label
+              >
+            </div>
+            <div class="flex items-center mb-4">
+              <input
+                id="Sensibilidad_luz"
+                type="checkbox"
+                value=""
+                class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              />
+              <label
+                for="Sensibilidad_luz"
+                class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                >Sensibilidad a la luz</label
+              >
+            </div>
+            <div class="flex items-center mb-4">
+              <input
+                id="Rigidez"
+                type="checkbox"
+                value=""
+                class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              />
+              <label
+                for="Rigidez"
+                class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                >Rigidez en el cuello</label
+              >
+            </div>
+            <div class="flex items-center mb-4">
+              <input
+                id="perdida_de_audición"
+                type="checkbox"
+                value=""
+                class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              />
+              <label
+                for="perdida_de_audición"
+                class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                >Perdida de la audicion</label
+              >
+            </div>
+            <div class="flex items-center mb-4">
+              <input
+                id="Entumecimiento"
+                type="checkbox"
+                value=""
+                class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              />
+              <label
+                for="Entumecimiento"
+                class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                >Entumecimiento</label
+              >
+            </div>
 
-    <div>
-      <h1 class="underline mb-2" class="space-y-8">Localizacion del dolor</h1>
-      <input class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" placeholder="en que parte?">
-      <p class="text-gray-600 text-xs italic">describa en que zona</p>
-      <div class="flex items-center mb-4">
-        <input
-          id="default-checkbox"
-          type="checkbox"
-          value=""
-          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-        />
-        <label
-          for="default-checkbox"
-          class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Cabeza</label
-        >
-      </div>
-      <div class="flex items-center">
-        <input
-          id="checked-checkbox"
-          type="checkbox"
-          value=""
-          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-        />
-        <label
-          for="checked-checkbox"
-          class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Cuello / tronco
-        </label>
-      </div>
-    </div>
-    <div>
-      <div class="flex items-center mb-4">
-        <input
-          id="default-checkbox"
-          type="checkbox"
-          value=""
-          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-        />
-        <label
-          for="default-checkbox"
-          class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Hombro</label
-        >
-      </div>
-      <div class="flex items-center">
-        <input
-          id="checked-checkbox"
-          type="checkbox"
-          value=""
-          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-        />
-        <label
-          for="checked-checkbox"
-          class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Pecho</label
-        >
-      </div>
-    </div>
-    <div>
-      <div class="flex items-center mb-4">
-        <input
-          id="default-checkbox"
-          type="checkbox"
-          value=""
-          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-        />
-        <label
-          for="default-checkbox"
-          class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Abdomen</label
-        >
-      </div>
-      <div class="flex items-center">
-        <input
-          id="checked-checkbox"
-          type="checkbox"
-          value=""
-          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-        />
-        <label
-          for="checked-checkbox"
-          class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Genital</label
-        >
-      </div>
-      <h1 class="mt-3 underline mb-4">Vomitos / Diarrea</h1>
-      <div class="flex items-center">
-        <input
-          id="checked-checkbox"
-          type="checkbox"
-          value=""
-          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-        />
-        <label
-          for="checked-checkbox"
-          class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Si</label
-        >
-      </div>
-      <div class="flex items-center">
-        <input
+            <h2 class="mt-3 font-bold mb-4">Nivel de conciencia</h2>
+            <div class="flex items-center mb-4">
+              <input
+                id="conci1"
+                type="radio"
+                value=""
+                name="concienciaa"
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              />
+              <label
+                for="conci1"
+                class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                >Consciente</label
+              >
+            </div>
+            <div class="flex items-center mb-4">
+              <input
+                id="conci2"
+                type="radio"
+                value=""
+                name="concienciaa"
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              />
+              <label
+                for="conci2"
+                class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                >Inconsciente</label
+              >
+            </div>
+            <div class="flex items-center mb-4">
+              <input
+                id="conciencia3"
+                type="radio"
+                value=""
+                name="concienciaa"
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              />
+              <label
+                for="conci3"
+                class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                >Confundido</label
+              >
+            </div>
+            <h2 class="font-bold mt-3 mb-4">Nivel del dolor</h2>
+            <div class="flex items-center mb-4">
+              <input
+                id="pain1"
+                type="radio"
+                value=""
+                name="dolor"
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              />
+              <label
+                for="pain1"
+                class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                >Intenso
+              </label>
+            </div>
+            <div class="flex items-center mb-4">
+              <input
+                id="pain2"
+                type="radio"
+                value=""
+                name="dolor"
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              />
+              <label
+                for="pain2"
+                class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                >Moderado
+              </label>
+            </div>
 
-          id="checked-checkbox"
-          type="checkbox"
-          value=""
-          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-        />
-        <label
-          for="checked-checkbox"
-          class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Si, sangre</label
-        >
-      </div>
-      <div class="flex items-center">
-        <input
-          id="checked-checkbox"
-          type="checkbox"
-          value=""
-          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-        />
-        <label
-          for="checked-checkbox"
-          class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >No</label
-        >
-      </div>
-    <h1 class="mt-1.5 underline mb-2">Pulso</h1>
-      <h2>L.P.M.</h2>
-      <div>
-        <input class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" placeholder="escriba aqui">
-          <p class="text-gray-600 text-xs italic">Latidos por minuto</p>
+            <div>
+              <h1 class="font-bold mb-2" class="space-y-8">
+                Localización del dolor
+              </h1>
+              <input
+                class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="grid-password"
+                placeholder="¿en que parte?"
+              />
+              <p class="text-gray-600 text-xs italic">Describa en qué zona</p>
+              <div class="flex items-center mb-4">
+                <input
+                  id="Cabeza"
+                  type="checkbox"
+                  value=""
+                  class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                />
+                <label
+                  for="Cabeza"
+                  class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                  >Cabeza</label
+                >
+              </div>
+              <div class="flex items-center mb-4">
+                <input
+                  id="Cuello/tronco
+                  type="checkbox"
+                  value=""
+                  class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                />
+                <label
+                  for="Cuello/tronco
+                  class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                  >Cuello / tronco
+                </label>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center mb-4">
+                <input
+                  id="Hombro"
+                  type="checkbox"
+                  value=""
+                  class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                />
+                <label
+                  for="Hombro"
+                  class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                  >Hombro</label
+                >
+              </div>
+              <div class="flex items-center mb-4">
+                <input
+                  id="Pecho"
+                  type="checkbox"
+                  value=""
+                  class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                />
+                <label
+                  for="Pecho"
+                  class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                  >Pecho</label
+                >
+              </div>
+            </div>
+            <div>
+              <div class="flex items-center mb-4">
+                <input
+                  id="Abdomen"
+                  type="checkbox"
+                  value=""
+                  class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                />
+                <label
+                  for="Abdomen"
+                  class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                  >Abdomen</label
+                >
+              </div>
+              <div class="flex items-center mb-4">
+                <input
+                  id="Genital"
+                  type="checkbox"
+                  value=""
+                  class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                />
+                <label
+                  for="Genital"
+                  class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                  >Genital</label
+                >
+              </div>
+              <h1 class="mt-3 font-bold mb-4">Vómitos / Diarrea</h1>
+              <div class="flex items-center mb-4">
+                <input
+                  id="Sí"
+                  type="checkbox"
+                  value=""
+                  class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                />
+                <label
+                  for="Sí"
+                  class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                  >Sí</label
+                >
+              </div>
+              <div class="flex items-center mb-4">
+                <input
+                  id="Sí_sangre"
+                  type="checkbox"
+                  value=""
+                  class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                />
+                <label
+                  for="Sí_sangre"
+                  class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                  >Sí, sangre</label
+                >
+              </div>
+              <div class="flex items-center mb-4">
+                <input
+                  id="No"
+                  type="checkbox"
+                  value=""
+                  class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                />
+                <label
+                  for="No"
+                  class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                  >No</label
+                >
+              </div>
+            </div>
+            <h1 class="mt-1.5 font-bold mb-2">Pulso</h1>
+            <h2>L.P.M.</h2>
+            <div>
+              <input
+                class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="grid-password"
+                placeholder="escriba aqui"
+              />
+              <p class="text-gray-600 text-xs italic">Latidos por minuto</p>
+            </div>
+            <h2 class="mt-3 font-bold mb-4">Sangrado</h2>
+            <div class="flex items-center mb-4">
+              <input
+                id="sang1"
+                type="radio"
+                value=""
+                name="sangrado"
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              />
+              <label
+                for="sange1"
+                class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                >Desangrante
+              </label>
+            </div>
+            <div class="flex items-center mb-4">
+              <input
+                id="sang2"
+                type="radio"
+                value=""
+                name="sangrado"
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              />
+              <label
+                for="sange2"
+                class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                >Abundante
+              </label>
+            </div>
+            <div class="flex items-center mb-4">
+              <input
+                id="sang2"
+                type="radio"
+                value=""
+                name="sangrado"
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              />
+              <label
+                for="sange2"
+                class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                >Controlado
+              </label>
+            </div>
+            <div>
+              <h1 class="font-bold">Localización del sangrado</h1>
+              <input
+                class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="grid-password"
+                placeholder="en que parte?"
+              />
+              <p class="text-gray-600 text-xs italic">Describa en que zona</p>
+            </div>
+            <div class="flex flex-wrap -mx-3 mb-2">
+              <div class="w-full px-3 mb-6 md:mb-0">
+                <label
+                  class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  for="grid-city"
+                >
+                </label>
+                <div>
+                  <h1 class="font-bold mb-4" class="space-y-8">Alergias</h1>
+                  <div class="flex items-center mb-4">
+                    <input
+                      id="Insulina"
+                      type="checkbox"
+                      value=""
+                      class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="Insulina"
+                      class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                      >Insulina</label
+                    >
+                  </div>
+                  <div class="flex items-center mb-4">
+                    <input
+                      id="Sulfaminas"
+                      type="checkbox"
+                      value=""
+                      class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="Sulfaminas"
+                      class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                      >Sulfaminas</label
+                    >
+                  </div>
+                  <div class="flex items-center mb-4">
+                    <input
+                      id="Anticonvulsivos"
+                      type="checkbox"
+                      value=""
+                      class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="Anticonvulsivos"
+                      class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                      >Anticonvulsivos
+                    </label>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex items-center mb-4">
+                    <input
+                      id="Yodo"
+                      type="checkbox"
+                      value=""
+                      class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="Yodo"
+                      class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                      >Yodo</label
+                    >
+                  </div>
+                  <div class="flex items-center mb-4">
+                    <input
+                      id="Penicilina"
+                      type="checkbox"
+                      value=""
+                      class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="Penicilina"
+                      class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                      >Penicilina</label
+                    >
+                  </div>
+                </div>
+                <div>
+                  <div class="flex items-center mb-4">
+                    <input
+                      id="Amoxicilina"
+                      type="checkbox"
+                      value=""
+                      class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="Amoxicilina"
+                      class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                      >Amoxicilina</label
+                    >
+                  </div>
+                  <div class="flex items-center mb">
+                    <input
+                      id="Morfina"
+                      type="checkbox"
+                      value=""
+                      class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      for="Morfina"
+                      class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                      >Morfina</label
+                    >
+                  </div>
+                  <div>
+                    <h1 class="font-bold">Otra</h1>
+                    <input
+                      class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      id="grid-password"
+                      placeholder="escriba aqui"
+                    />
+                    <p class="text-gray-600 text-xs italic">Otras alergias</p>
+                  </div>
+                </div>
+                <div class="flex flex-wrap -mx-3 mb-2">
+                  <div class="w-full px-3 mb-6 md:mb-0">
+                    <label
+                      class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                      for="grid-city"
+                    >
+                    </label>
+                    <h1 class="font-bold mb-4 space-y-8">
+                      Enfermedades crónicas
+                    </h1>
+                    <div class="flex items-start flex-col mb-4">
+                      <!--meter todo acá-->
+                      <div class="flex items-center mb-4">
+                        <input
+                          id="Epoc"
+                          type="checkbox"
+                          value=""
+                          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                        />
+                        <label
+                          for="Epoc"
+                          class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                          >Epoc</label
+                        >
+                      </div>
+                      <div class="flex items-center mb-4">
+                        <input
+                          id="Fuma"
+                          type="checkbox"
+                          value=""
+                          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                        />
+                        <label
+                          for="Fuma"
+                          class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                          >Fuma</label
+                        >
+                      </div>
+                      <div class="flex items-center">
+                        <input
+                          id="Asma"
+                          type="checkbox"
+                          value=""
+                          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                        />
+                        <label
+                          for="Asma"
+                          class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                          >Asma
+                        </label>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="flex items-center mb-4">
+                        <input
+                          id="Cardiaco"
+                          type="checkbox"
+                          value=""
+                          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                        />
+                        <label
+                          for="Cardiaco"
+                          class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                          >Cardiaco</label
+                        >
+                      </div>
+                      <div class="flex items-center">
+                        <input
+                          id="Obesidad"
+                          type="checkbox"
+                          value=""
+                          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                        />
+                        <label
+                          for="Obesidad"
+                          class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                          >Obesidad</label
+                        >
+                      </div>
+                    </div>
+                    <div>
+                      <div class="flex items-center mb-4">
+                        <input
+                          id="Diabetes"
+                          type="checkbox"
+                          value=""
+                          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                        />
+                        <label
+                          for="Diabetes"
+                          class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                          >Diabetes</label
+                        >
+                      </div>
+                      <div class="flex items-center">
+                        <input
+                          id="Vih"
+                          type="checkbox"
+                          value=""
+                          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                        />
+                        <label
+                          for="Vih"
+                          class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                          >Vih</label
+                        >
+                      </div>
+                      <div class="flex items-center mb-4">
+                        <input
+                          id="Epilepsia"
+                          type="checkbox"
+                          value=""
+                          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                        />
+                        <label
+                          for="Epilepsia"
+                          class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                          >Epilepsia</label
+                        >
+                      </div>
+                      <h1 class="font-bold">Otra/s</h1>
+                      <input
+                        class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        id="grid-password"
+                        placeholder="escriba aqui"
+                      />
+                    </div>
+                    <p class="text-gray-600 text-xs italic">
+                      Otras enfermedades crónicas
+                    </p>
+                  </div>
+                </div>
+                <div class="flex flex-wrap -mx-3 mb-2">
+                  <div class="w-full px-3 mb-6 md:mb-0">
+                    <label
+                      class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                      for="grid-city"
+                    >
+                    </label>
+                    <h1 class="font-bold">Ultimo alimento ingerido</h1>
+                    <input
+                      class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                      id="grid-password"
+                      placeholder="escriba aqui"
+                    />
+                    <p class="text-gray-600 text-xs italic">que comes?</p>
+                    <!-- <div> -->
+                    <!-- <h1 class="mb-4">Seleccionar opciones</h1>
+            <label
+              for="countries"
+              class="block mb-2 text-sm font-medium text-gray-500 dark:text-gray-400"
+              >perdida de alguna extremidad</label
+            >
+            <select
+              id="etc"
+              class="mb-4 bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            >
+              <option selected>extremidades</option>
+              <option value="cabeza">cabeza</option>
+              <option value="pierna">pierna</option>
+              <option value="brazo">brazo</option>
+              <option value="otro">otro</option>
+            </select> -->
+                    <!-- </div> -->
+                    <div>
+                      <h1>Evento</h1>
+                      <label
+                        for="Accidente"
+                        class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                        >Accidente</label
+                      >
+                    </div>
+                    <div class="flex items-center mb-4">
+                      <input
+                        id="Intoxicación"
+                        type="checkbox"
+                        value=""
+                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                      />
+                      <label
+                        for="Intoxicación"
+                        class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                        >Intoxicación</label
+                      >
+                    </div>
+                    <div class="flex items-center mb-4">
+                      <input
+                        id="Envenenamiento"
+                        type="checkbox"
+                        value=""
+                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                      />
+                      <label
+                        for="Envenenamiento"
+                        class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                        >Envenenamiento</label
+                      >
+                    </div>
+                    <div class="flex items-center mb-4">
+                      <input
+                        id="Evento_súbito"
+                        type="checkbox"
+                        value=""
+                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                      />
+                      <label
+                        for="Evento_súbito"
+                        class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                        >Evento súbito</label
+                      >
+                    </div>
+                    <div class="flex items-center mb-4">
+                      <input
+                        id="Embarazo"
+                        type="checkbox"
+                        value=""
+                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                      />
+                      <label
+                        for="Embarazo"
+                        class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                        >Embarazo</label
+                      >
+                    </div>
+                    <div class="flex items-center mb-4">
+                      <input
+                        id="Digestivos"
+                        type="checkbox"
+                        value=""
+                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                      />
+                      <label
+                        for="Digestivos"
+                        class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                        >Digestivos</label
+                      >
+                    </div>
+                    <div class="flex items-center mb-4">
+                      <input
+                        id="Ginecologicos"
+                        type="checkbox"
+                        value=""
+                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                      />
+                      <label
+                        for="Ginecologicos"
+                        class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                        >Ginecológicos/urinarios</label
+                      >
+                    </div>
+                    <div class="flex items-center mb-4">
+                      <input
+                        id="Oculares"
+                        type="checkbox"
+                        value=""
+                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                      />
+                      <label
+                        for="Oculares"
+                        class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-300"
+                        >Oculares</label
+                      >
+                    </div>
+                    <div>
+                      <h1 class="font-bold">Tipo de sangre</h1>
+                      <input
+                        class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        id="grid-password"
+                        placeholder="escriba aqui"
+                      />
+                      <p class="text-gray-600 text-xs italic">
+                        Escriba el tipo de sangre
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <label
+                      for="message"
+                      class="block mb-4 text-sm font-medium text-gray-500 dark:text-gray-400"
+                      >Informaciones adicionales</label
+                    >
+                    <textarea
+                      id="message"
+                      rows="4"
+                      class="block p-2.5 w-full text-sm text-gray-500 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="Ingrese observaciones"
+                    ></textarea>
+                    <button
+                      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-20 border border-blue-700 rounded"
+                    >
+                      Enviar Formulario
+                    </button>
+                  </div>
+                  <a href="{{ url_for('paramedicos_estado') }}"></a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    <h2 class="mt-3 underline mb-4">Sangrado</h2>
-    <div class="flex items-center mb-4">
-      <input
-        id="sang1"
-        type="radio"
-        value=""
-        name="sangrado"
-        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-      />
-      <label
-        for="sange1"
-        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-        >Desangrante
-      </label>
     </div>
-    <div class="flex items-center mb-4">
-      <input
-        id="sang2"
-        type="radio"
-        value=""
-        name="sangrado"
-        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-      />
-      <label
-        for="sange2"
-        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-        >Abundante
-      </label>
-    </div>
-    <div class="flex items-center mb-4">
-      <input
-        id="sang2"
-        type="radio"
-        value=""
-        name="sangrado"
-        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-      />
-      <label
-        for="sange2"
-        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-        >Controlado
-      </label>
-    </div>
-    <h1 class="underline">Localizacion del sangrado</h1>
-    <input class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" placeholder="en que parte?">
-      <p class="text-gray-600 text-xs italic">describa en que zona</p>
-    </div>
-  </div>
-  <div class="flex flex-wrap -mx-3 mb-2">
-    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
-      </label>
-      <div>
-        <h1 class="underline mb-10" class="space-y-8">Alergias</h1>
-        <div class="flex items-center mb-4">
-          <input
-            id="default-checkbox"
-            type="checkbox"
-            value=""
-            class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-          />
-          <label
-            for="default-checkbox"
-            class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Insulina</label
-          >
-        </div>
-        <div class="flex items-center mb-4">
-          <input
-            id="default-checkbox"
-            type="checkbox"
-            value=""
-            class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-          />
-          <label
-            for="default-checkbox"
-            class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Sulfaminas</label
-          >
-        </div>
-        <div class="flex items-center">
-          <input
-            id="checked-checkbox"
-            type="checkbox"
-            value=""
-            class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-          />
-          <label
-            for="checked-checkbox"
-            class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Anticonvulsivos
-          </label>
-        </div>
-      </div>
-      <div>
-        <div class="flex items-center mb-4">
-          <input
-            id="default-checkbox"
-            type="checkbox"
-            value=""
-            class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-          />
-          <label
-            for="default-checkbox"
-            class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Yodo</label
-          >
-        </div>
-        <div class="flex items-center">
-          <input
-            id="checked-checkbox"
-            type="checkbox"
-            value=""
-            class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-          />
-          <label
-            for="checked-checkbox"
-            class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Penicilina</label
-          >
-        </div>
-      </div>
-      <div>
-        <div class="flex items-center mb-4">
-          <input
-            id="default-checkbox"
-            type="checkbox"
-            value=""
-            class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-          />
-          <label
-            for="default-checkbox"
-            class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Amoxicilina</label
-          >
-        </div>
-        <div class="flex items-center">
-          <input
-            id="checked-checkbox"
-            type="checkbox"
-            value=""
-            class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-          />
-          <label
-            for="checked-checkbox"
-            class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Morfina</label
-          >
-        </div>
-        <div>
-        <h1 class="underline">Otra</h1>
-        <input class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" placeholder="escriba aqui">
-          <p class="text-gray-600 text-xs italic">Otras alergias</p>
-        </div>
-      </div>
-      <div class="flex flex-wrap -mx-3 mb-2">
-        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
-          </label>
-          <h1 class="underline mb-10" class="space-y-8">Enfermedades cronicas</h1>
-          <div class="flex items-center mb-4">
-            <input
-              id="default-checkbox"
-              type="checkbox"
-              value=""
-              class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-            />
-            <label
-              for="default-checkbox"
-              class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Epoc</label
-            >
-          </div>
-          <div class="flex items-center mb-4">
-            <input
-              id="default-checkbox"
-              type="checkbox"
-              value=""
-              class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-            />
-            <label
-              for="default-checkbox"
-              class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Fuma</label
-            >
-          </div>
-          <div class="flex items-center">
-            <input
-              id="checked-checkbox"
-              type="checkbox"
-              value=""
-              class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-            />
-            <label
-              for="checked-checkbox"
-              class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Asma
-            </label>
-          </div>
-        </div>
-        <div>
-          <div class="flex items-center mb-4">
-            <input
-              id="default-checkbox"
-              type="checkbox"
-              value=""
-              class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-            />
-            <label
-              for="default-checkbox"
-              class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Cardiaco</label
-            >
-          </div>
-          <div class="flex items-center">
-            <input
-              id="checked-checkbox"
-              type="checkbox"
-              value=""
-              class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-            />
-            <label
-              for="checked-checkbox"
-              class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Obesidad</label
-            >
-          </div>
-        </div>
-        <div>
-          <div class="flex items-center mb-4">
-            <input
-              id="default-checkbox"
-              type="checkbox"
-              value=""
-              class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-            />
-            <label
-              for="default-checkbox"
-              class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Diabetes</label
-            >
-          </div>
-          <div class="flex items-center">
-            <input
-              id="checked-checkbox"
-              type="checkbox"
-              value=""
-              class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-            />
-            <label
-              for="checked-checkbox"
-              class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Vih</label
-            >
-          </div>
-          <div class="flex items-center mb-4">
-            <input
-              id="default-checkbox"
-              type="checkbox"
-              value=""
-              class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-            />
-            <label
-              for="default-checkbox"
-              class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Epilepsia</label
-            >
-          </div>
-        <h1 class="underline">Otra/s</h1>
-        <input class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" placeholder="escriba aqui">
-          <p class="text-gray-600 text-xs italic">Otras enfermedades cronicas</p>
-        </div>
-      </div>
-      <div class="flex flex-wrap -mx-3 mb-2">
-        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
-          </label>
-          <h1 class="underline">Ultimo alimento ingerido</h1>
-          <input class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" placeholder="escriba aqui">
-            <p class="text-gray-600 text-xs italic">que comes?</p>
-    <!-- <div> -->
-      <!-- <h1 class="mb-4">Seleccionar opciones</h1>
-      <label
-        for="countries"
-        class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
-        >perdida de alguna extremidad</label
-      >
-      <select
-        id="etc"
-        class="mb-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-      >
-        <option selected>extremidades</option>
-        <option value="cabeza">cabeza</option>
-        <option value="pierna">pierna</option>
-        <option value="brazo">brazo</option>
-        <option value="otro">otro</option>
-      </select> -->
-      <!-- </div> -->
-      <div>
-        <h1>Evento</h1>
-        <label
-          for="default-checkbox"
-          class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Accidente</label
-        >
-      </div>
-      <div class="flex items-center mb-4">
-        <input
-          id="default-checkbox"
-          type="checkbox"
-          value=""
-          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-        />
-        <label
-          for="default-checkbox"
-          class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Intoxicacion</label
-        >
-      </div>
-      <div class="flex items-center mb-4">
-        <input
-          id="default-checkbox"
-          type="checkbox"
-          value=""
-          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-        />
-        <label
-          for="default-checkbox"
-          class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Envenenamiento</label
-        >
-      </div>
-      <div class="flex items-center mb-4">
-        <input
-          id="default-checkbox"
-          type="checkbox"
-          value=""
-          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-        />
-        <label
-          for="default-checkbox"
-          class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Evento subito</label
-        >
-      </div>
-      <div class="flex items-center mb-4">
-        <input
-          id="default-checkbox"
-          type="checkbox"
-          value=""
-          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-        />
-        <label
-          for="default-checkbox"
-          class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Embarazo</label
-        >
-      </div>
-      <div class="flex items-center mb-4">
-        <input
-          id="default-checkbox"
-          type="checkbox"
-          value=""
-          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-        />
-        <label
-          for="default-checkbox"
-          class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Digestivos</label
-        >
-      </div>
-      <div class="flex items-center mb-4">
-        <input
-          id="default-checkbox"
-          type="checkbox"
-          value=""
-          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-        />
-        <label
-          for="default-checkbox"
-          class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Ginecologicos/urinarios</label
-        >
-      </div>
-      <div class="flex items-center mb-4">
-        <input
-          id="default-checkbox"
-          type="checkbox"
-          value=""
-          class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-        />
-        <label
-          for="default-checkbox"
-          class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Oculares</label
-        >
-      </div>
-      <div>
-        <h1 class="underline">Tipo de sangre</h1>
-        <input class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" placeholder="escriba aqui">
-          <p class="text-gray-600 text-xs italic">escriba el tipo de sangre</p>
-      </div>
-    </div>
-      <div>
-      <label
-        for="message"
-        class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
-        >Your message</label
-      >
-      <textarea
-        id="message"
-        rows="4"
-        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-        placeholder="Your message..."
-      ></textarea>
-      <button
-        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
-      >
-        Enviar
-      </button>
-    </div>
-    <a href="{{ url_for('paramedicos_estado') }}">Enviar Formulario</a>
   </body>
 </html>

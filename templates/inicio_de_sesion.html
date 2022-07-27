@@ -1,102 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inicio de Sesión</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Inicio de Sesiónm</title>
     <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body>
-    <!-- A partir de aqui metanle el body de la pagina -->
-    <div class="font-sans">
-      <div
-        class="flex flex-wrap min-h-screen sm:justify-center items-center h-full bg-gradient-to-tl from-blue-400 to-red-900 w-full py-16 px-4"
-      >
-        <!--agrego flex + flex-wrapgit y saque back bground gris, agg bg- degradado-->
-        <div class="relative sm:max-w-sm w-full h-full">
-          <div
-            class="flex-auto card bg-blue-200 shadow-lg w-full h-full rounded-3xl absolute transform -rotate-3"
-          ></div>
-          <div
-            class="flex-auto card bg-red-400 shadow-lg w-full h-full rounded-3xl absolute transform rotate-3"
-          ></div>
-          <div
-            class="relative w-full h-full rounded-3xl px-10 py-20 bg-gray-100 shadow-md"
-          >
-            <br />
-            <img
-              class="h-[100px] w-[100px] mx-auto mb-0"
-              src="https://cdn-icons-png.flaticon.com/512/1976/1976784.png"
-              alt="google Logo"
-            />
+</head>
+<body>
+    
+    <script>
+        var socket = io();
+      </script>
+      <!-- A partir de aqui metanle el body de la pagina -->
+      <div class="font-sans">
+        <div class="flex flex-wrap min-h-screen sm:justify-center items-center h-full bg-gradient-to-tl from-blue-400 to-red-900 w-full py-16 px-4"> 
+            <!--agrego flex + flex-wrapgit y saque back bground gris, agg bg- degradado-->
+            <div class="relative sm:max-w-sm w-full h-full">
+                <div class="flex-auto card bg-blue-200 shadow-lg  w-full h-full rounded-3xl absolute  transform -rotate-3"></div>
+                <div class="flex-auto card bg-red-400 shadow-lg  w-full h-full rounded-3xl absolute  transform rotate-3"></div>
+                <div class="relative w-full h-full rounded-3xl  px-10 py-20 bg-gray-100 shadow-md">
+                    <br> </br>
+                    <img class="h-[100px] w-[100px] mx-auto mb-0"  src="https://cdn-icons-png.flaticon.com/512/1976/1976784.png" alt="google Logo" />
+  
+                    <label class="block mt-0 text-2xl text-red-600 text-center font-bold">
+                        PYTÃ
+                    </label>
+            
+                    <form method="#" action="#" class="mt-10">
+                                
+            
+                        <div class="mt-7 flex flex-col text-center gap-3">
 
-            <label
-              class="block mt-0 text-2xl text-red-600 text-center font-bold"
-            >
-              PYTÃ
-            </label>
+                            <div>
+                                <input type="email" placeholder="Correo electronico" class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0">
+                            </div>
+                
+                            <div class="mt-3">                
+                                <input type="password" placeholder="Contraseña" class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0">                           
+                            </div>
 
-            <form method="#" action="#" class="mt-10">
-              <div class="mt-7 flex flex-col text-center gap-3">
-                <div>
-                  <input
-                    type="email"
-                    placeholder="Correo electronico"
-                    class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0"
-                  />
+                            <div class="mt-7 flex">
+                                <label for="remember_me" class="inline-flex items-center w-full cursor-pointer">
+                                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
+                                    <span class="ml-2 text-sm text-gray-600">
+                                        Recuerdame
+                                    </span>
+                                </label>
+                
+                               <div class="w-full text-right">     
+                                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="#">
+                                        ¿Olvidó su contraseña?
+                                    </a>                                  
+                               </div>
+                            </div>
+                
+                                                      
+                            <a class="bg-red-400 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+                                Iniciar Sesión
+                            </a>
+                           
+                        </div>
+                     
+                        <br> </br>
+                        
+                    </form>
                 </div>
-
-                <div class="mt-3">
-                  <input
-                    type="password"
-                    placeholder="Contraseña"
-                    class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0"
-                  />
-                </div>
-
-                <div class="mt-7 flex">
-                  <label
-                    for="remember_me"
-                    class="inline-flex items-center w-full cursor-pointer"
-                  >
-                    <input
-                      id="remember_me"
-                      type="checkbox"
-                      class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                      name="remember"
-                    />
-                    <span class="ml-2 text-sm text-gray-600"> Recuerdame </span>
-                  </label>
-
-                  <div class="w-full text-right">
-                    <a
-                      class="underline text-sm text-gray-600 hover:text-gray-900"
-                      href="#"
-                    >
-                      ¿Olvidó su contraseña?
-                    </a>
-                  </div>
-                </div>
-
-                <a
-                  class="bg-red-400 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105"
-                >
-                  Iniciar Sesión
-                </a>
-
-                <a
-                  class="bg-blue-300 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105"
-                >
-                  Registrarse
-                </a>
-              </div>
-
-              <br />
-            </form>
-          </div>
+            </div>
         </div>
-      </div>
+        
     </div>
-  </body>
+      
+</body>
 </html>
