@@ -22,7 +22,8 @@
           <div
             class="flex-auto card bg-red-400 shadow-lg w-full h-full rounded-3xl absolute transform rotate-3"
           ></div>
-          <div
+          <form
+            method="POST" action="{{url_for('enviado_pacientes')}}"
             class="relative w-full h-full rounded-3xl px-10 py-20 bg-gray-100 shadow-md"
           >
             <br />
@@ -33,18 +34,33 @@
             </b>
             <div>
               <b>
-                <h2 class="mt-3 mb-4 formulario1">Respiraciòn</h2>
+                <h2 class="mt-3 mb-4 formulario1">Respiración</h2>
               </b>
+              <div class="flex items-center mb-4">
+                <input
+                  id="respiracion-none"
+                  checked
+                  type="radio"
+                  value="Sin problemas"
+                  name="respiracion"
+                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                />
+                <label
+                  for="respiracion-none"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-500"
+                  >Sin problemas</label
+                >
+              </div>
               <div class="flex items-center mb-4">
                 <input
                   id="chillidos"
                   type="radio"
-                  value=""
-                  name="Respi"
+                  value="Chillidos al respirar"
+                  name="respiracion"
                   class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
                 <label
-                  name="Respi"
+                  for="chillidos"
                   class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-500"
                   >Chillidos al respirar</label
                 >
@@ -53,8 +69,8 @@
                 <input
                   id="dificultad"
                   type="radio"
-                  value=""
-                  name="Respi"
+                  value="Dificultad al respirar"
+                  name="respiracion"
                   class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
                 <label
@@ -236,7 +252,7 @@
 
             <div>
               <b>
-                <h1 class="mb-10" class="space-y-8">Localizaciòn del dolor</h1>
+                <h1 class="mb-10" class="space-y-8">Localización del dolor</h1>
               </b>
               <div class="flex items-center mb-4">
                 <input
@@ -321,7 +337,7 @@
                 >
               </div>
               <b>
-                <h2 class="mt-3 mb-4">Vòmitos / Diarrea</h2>
+                <h2 class="mt-3 mb-4">Vómitos / Diarrea</h2>
               </b>
               <div class="flex items-center mb-4">
                 <input
@@ -429,7 +445,7 @@
               </label>
             </div>
             <b>
-              <h1 class="">Localizaciòn</h1>
+              <h1 class="">Localización</h1>
             </b>
             <input
               class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -561,7 +577,7 @@
                 >
                 </label>
                 <b>
-                  <h1 class="mb-4" class="space-y-8">Enfermedades crònicas</h1>
+                  <h1 class="mb-4" class="space-y-8">Enfermedades crónicas</h1>
                 </b>
                 <div class="flex items-center mb-4">
                   <input
@@ -638,7 +654,7 @@
                 >
                 </label>
                 <b>
-                  <h1 class="m">Ùltimo alimento ingerido</h1>
+                  <h1 class="m">Último alimento ingerido</h1>
                 </b>
                 <input
                   class="appearance-none block w-mid bg-gray-200 text-gray-700 border border-gray-200 rounded py-1 px-2 mb-1 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
@@ -646,7 +662,7 @@
                   type="text"
                   placeholder="escriba aqui"
                 />
-                <p class="text-gray-600 text-xs italic">Què comiste?</p>
+                <p class="text-gray-600 text-xs italic">Qué comiste?</p>
                 <!-- <div> -->
                 <!-- <h1 class="mb-4">Seleccionar opciones</h1>
                         <label
@@ -794,13 +810,12 @@
               placeholder="Escriba aquí..."
             ></textarea>
             
-            <a
+            <input type="submit"
               class="w-full mt-7 py-4 bg-blue-200 block text-center"
-              href="{{ url_for('enviado_pacientes') }}"
-              >Enviar formulario</a
-            >
+              value="Enviar formulario"
+              />
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </body>

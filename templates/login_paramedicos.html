@@ -34,7 +34,7 @@
             >
               Login
             </label>
-            <form method="POST" action="http://127.0.0.1:5000/paramedicos/login" class="mt-10">
+            <form method="POST" action="{{url_for('login_paramedicos')}}" class="mt-10">
               <div class="mt-7">
                 <input
                   name = "correos"
@@ -64,7 +64,7 @@
     <script>
 
       const error= new URLSearchParams(location.search);
-      // console.log(error)
+      console.log(error)
       for(const [key,value] of error){
         console.log(`${key}:${value}`);
       }
